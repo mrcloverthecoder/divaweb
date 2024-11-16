@@ -1,0 +1,170 @@
+{
+  "tempo": [
+    {
+      "time": 0.0,
+      "flyingTime": 1500
+    }
+  ],
+  "notes": [
+    {
+      "time": 1500.0,
+      "type": 2,
+      "posX": 912.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 1250,
+      "frequency": -2
+    },
+    {
+      "time": 1875.0,
+      "type": 2,
+      "posX": 912.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 90.0,
+      "amplitude": 1250,
+      "frequency": -2
+    },
+    {
+      "time": 2250.0,
+      "type": 2,
+      "posX": 912.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 1250,
+      "frequency": -2
+    },
+    {
+      "time": 2625.0,
+      "type": 2,
+      "posX": 912.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": -90.0,
+      "amplitude": 1250,
+      "frequency": -2
+    },
+    {
+      "time": 3000.0,
+      "type": 2,
+      "posX": 912.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 3187.5,
+      "type": 2,
+      "posX": 1008.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 3375.0,
+      "type": 2,
+      "posX": 1104.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 3562.5,
+      "type": 2,
+      "posX": 1200.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 3750.0,
+      "type": 2,
+      "posX": 1296.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 3843.75,
+      "type": 2,
+      "posX": 1344.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 3937.5,
+      "type": 2,
+      "posX": 1392.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 4031.25,
+      "type": 2,
+      "posX": 1440.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 4125.0,
+      "type": 2,
+      "posX": 1488.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 4218.75,
+      "type": 2,
+      "posX": 1536.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 4312.5,
+      "type": 2,
+      "posX": 1584.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    },
+    {
+      "time": 4406.25,
+      "type": 2,
+      "posX": 1632.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 450,
+      "frequency": -5
+    }
+  ]
+}

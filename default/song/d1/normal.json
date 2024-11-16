@@ -1,0 +1,6090 @@
+{
+  "tempo": [
+    {
+      "time": 0.0,
+      "flyingTime": 2000
+    }
+  ],
+  "notes": [
+    {
+      "time": 2000.0,
+      "type": 0,
+      "posX": 580.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 2250.0,
+      "type": 0,
+      "posX": 660.0,
+      "posY": 384.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 2500.0,
+      "type": 0,
+      "posX": 740.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 2750.0,
+      "type": 0,
+      "posX": 820.0,
+      "posY": 480.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 3000.0,
+      "type": 13,
+      "posX": 900.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 3250.0,
+      "type": 12,
+      "posX": 1012.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 3500.0,
+      "type": 13,
+      "posX": 900.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 3750.0,
+      "type": 12,
+      "posX": 1012.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 4000.0,
+      "type": 3,
+      "posX": 580.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 4250.0,
+      "type": 3,
+      "posX": 660.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 4500.0,
+      "type": 3,
+      "posX": 740.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 4750.0,
+      "type": 3,
+      "posX": 820.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 5000.0,
+      "type": 13,
+      "posX": 900.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 5250.0,
+      "type": 12,
+      "posX": 1012.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 5500.0,
+      "type": 13,
+      "posX": 900.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 5750.0,
+      "type": 12,
+      "posX": 1012.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 6000.0,
+      "type": 2,
+      "posX": 1332.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 6250.0,
+      "type": 2,
+      "posX": 1252.0,
+      "posY": 384.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 6500.0,
+      "type": 2,
+      "posX": 1172.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 6750.0,
+      "type": 2,
+      "posX": 1092.0,
+      "posY": 480.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 7000.0,
+      "type": 12,
+      "posX": 1012.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 7250.0,
+      "type": 13,
+      "posX": 900.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 7500.0,
+      "type": 12,
+      "posX": 1012.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 7750.0,
+      "type": 13,
+      "posX": 900.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 8000.0,
+      "type": 1,
+      "posX": 1332.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 8250.0,
+      "type": 1,
+      "posX": 1252.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 8500.0,
+      "type": 1,
+      "posX": 1172.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 8750.0,
+      "type": 1,
+      "posX": 1092.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 9000.0,
+      "type": 12,
+      "posX": 1012.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 9250.0,
+      "type": 13,
+      "posX": 900.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 9500.0,
+      "type": 12,
+      "posX": 1012.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 9750.0,
+      "type": 13,
+      "posX": 900.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 10000.0,
+      "type": 1,
+      "posX": 960.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 10250.0,
+      "type": 1,
+      "posX": 1051.844,
+      "posY": 306.268,
+      "distance": 1200.0,
+      "angle": 22.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 10500.0,
+      "type": 1,
+      "posX": 1129.704,
+      "posY": 358.292,
+      "distance": 1200.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 10750.0,
+      "type": 1,
+      "posX": 1181.728,
+      "posY": 436.152,
+      "distance": 1200.0,
+      "angle": 67.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 11000.0,
+      "type": 2,
+      "posX": 1200.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 90.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 11250.0,
+      "type": 2,
+      "posX": 1181.728,
+      "posY": 619.844,
+      "distance": 1200.0,
+      "angle": 112.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 11500.0,
+      "type": 2,
+      "posX": 1129.704,
+      "posY": 697.704,
+      "distance": 1200.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 11750.0,
+      "type": 2,
+      "posX": 1051.844,
+      "posY": 749.728,
+      "distance": 1200.0,
+      "angle": 157.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 12000.0,
+      "type": 3,
+      "posX": 960.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 12250.0,
+      "type": 3,
+      "posX": 868.156,
+      "posY": 749.728,
+      "distance": 1200.0,
+      "angle": -157.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 12500.0,
+      "type": 3,
+      "posX": 790.292,
+      "posY": 697.704,
+      "distance": 1200.0,
+      "angle": -135.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 12750.0,
+      "type": 3,
+      "posX": 738.268,
+      "posY": 619.844,
+      "distance": 1200.0,
+      "angle": -112.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 13000.0,
+      "type": 0,
+      "posX": 720.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": -90.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 13250.0,
+      "type": 0,
+      "posX": 738.268,
+      "posY": 436.152,
+      "distance": 1200.0,
+      "angle": -67.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 13500.0,
+      "type": 0,
+      "posX": 790.292,
+      "posY": 358.292,
+      "distance": 1200.0,
+      "angle": -45.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 13750.0,
+      "type": 0,
+      "posX": 868.152,
+      "posY": 306.268,
+      "distance": 1200.0,
+      "angle": -22.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 14000.0,
+      "type": 1,
+      "posX": 960.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 14250.0,
+      "type": 1,
+      "posX": 1044.852,
+      "posY": 467.144,
+      "distance": 1200.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 14500.0,
+      "type": 1,
+      "posX": 1080.0,
+      "posY": 552.0,
+      "distance": 1200.0,
+      "angle": 90.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 14750.0,
+      "type": 1,
+      "posX": 1044.852,
+      "posY": 636.852,
+      "distance": 1200.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 15000.0,
+      "type": 2,
+      "posX": 960.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 15250.0,
+      "type": 2,
+      "posX": 875.144,
+      "posY": 636.852,
+      "distance": 1200.0,
+      "angle": -135.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 15500.0,
+      "type": 2,
+      "posX": 840.0,
+      "posY": 552.0,
+      "distance": 1200.0,
+      "angle": -90.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 15750.0,
+      "type": 2,
+      "posX": 875.144,
+      "posY": 467.144,
+      "distance": 1200.0,
+      "angle": -45.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 16000.0,
+      "type": 1,
+      "posX": 960.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 16250.0,
+      "type": 1,
+      "posX": 1044.852,
+      "posY": 467.144,
+      "distance": 1200.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 16500.0,
+      "type": 1,
+      "posX": 1080.0,
+      "posY": 552.0,
+      "distance": 1200.0,
+      "angle": 90.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 16750.0,
+      "type": 1,
+      "posX": 1044.852,
+      "posY": 636.852,
+      "distance": 1200.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 17000.0,
+      "type": 2,
+      "posX": 960.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 17250.0,
+      "type": 2,
+      "posX": 875.144,
+      "posY": 636.852,
+      "distance": 1200.0,
+      "angle": -135.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 17500.0,
+      "type": 2,
+      "posX": 840.0,
+      "posY": 552.0,
+      "distance": 1200.0,
+      "angle": -90.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 17750.0,
+      "type": 2,
+      "posX": 875.144,
+      "posY": 467.144,
+      "distance": 1200.0,
+      "angle": -45.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 18000.0,
+      "type": 2,
+      "posX": 960.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 18500.0,
+      "type": 0,
+      "posX": 1120.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 19000.0,
+      "type": 2,
+      "posX": 1280.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 19500.0,
+      "type": 0,
+      "posX": 1440.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 20000.0,
+      "type": 2,
+      "posX": 1600.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 20500.0,
+      "type": 3,
+      "posX": 1440.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 21000.0,
+      "type": 2,
+      "posX": 1280.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 22000.0,
+      "type": 3,
+      "posX": 896.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 22500.0,
+      "type": 0,
+      "posX": 736.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 23000.0,
+      "type": 3,
+      "posX": 576.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 23500.0,
+      "type": 0,
+      "posX": 416.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 24000.0,
+      "type": 3,
+      "posX": 256.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 24500.0,
+      "type": 2,
+      "posX": 416.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 25000.0,
+      "type": 3,
+      "posX": 576.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 26000.0,
+      "type": 2,
+      "posX": 896.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 26500.0,
+      "type": 1,
+      "posX": 1056.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 27000.0,
+      "type": 2,
+      "posX": 1216.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 27500.0,
+      "type": 1,
+      "posX": 1376.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 28000.0,
+      "type": 2,
+      "posX": 1536.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 28500.0,
+      "type": 0,
+      "posX": 1376.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 29000.0,
+      "type": 2,
+      "posX": 1216.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 29750.0,
+      "type": 3,
+      "posX": 928.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 30000.0,
+      "type": 3,
+      "posX": 832.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 30250.0,
+      "type": 3,
+      "posX": 736.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 30500.0,
+      "type": 3,
+      "posX": 640.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 30750.0,
+      "type": 2,
+      "posX": 576.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 31000.0,
+      "type": 2,
+      "posX": 672.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 31250.0,
+      "type": 2,
+      "posX": 768.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 31500.0,
+      "type": 2,
+      "posX": 864.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 31750.0,
+      "type": 3,
+      "posX": 928.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 32000.0,
+      "type": 3,
+      "posX": 832.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 32250.0,
+      "type": 3,
+      "posX": 736.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 32500.0,
+      "type": 3,
+      "posX": 640.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 32750.0,
+      "type": 0,
+      "posX": 544.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 33000.0,
+      "type": 0,
+      "posX": 448.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 34000.0,
+      "type": 0,
+      "posX": 336.0,
+      "posY": 260.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 34250.0,
+      "type": 0,
+      "posX": 432.0,
+      "posY": 260.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 34750.0,
+      "type": 3,
+      "posX": 624.0,
+      "posY": 260.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 35250.0,
+      "type": 3,
+      "posX": 816.0,
+      "posY": 260.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 35750.0,
+      "type": 1,
+      "posX": 1008.0,
+      "posY": 260.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 36250.0,
+      "type": 1,
+      "posX": 1200.0,
+      "posY": 260.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 37250.0,
+      "type": 3,
+      "posX": 1520.0,
+      "posY": 452.0,
+      "distance": 1200.0,
+      "angle": -20.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 37500.0,
+      "type": 3,
+      "posX": 1440.0,
+      "posY": 500.0,
+      "distance": 1200.0,
+      "angle": -15.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 37750.0,
+      "type": 3,
+      "posX": 1360.0,
+      "posY": 548.0,
+      "distance": 1200.0,
+      "angle": -10.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38000.0,
+      "type": 15,
+      "posX": 1280.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38062.5,
+      "type": 15,
+      "posX": 1212.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38125.0,
+      "type": 15,
+      "posX": 1176.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38187.5,
+      "type": 15,
+      "posX": 1140.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38250.0,
+      "type": 15,
+      "posX": 1104.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38312.5,
+      "type": 15,
+      "posX": 1068.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38375.0,
+      "type": 15,
+      "posX": 1032.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38437.5,
+      "type": 15,
+      "posX": 996.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38500.0,
+      "type": 15,
+      "posX": 960.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38562.5,
+      "type": 15,
+      "posX": 924.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38625.0,
+      "type": 15,
+      "posX": 888.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38687.5,
+      "type": 15,
+      "posX": 852.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38750.0,
+      "type": 15,
+      "posX": 816.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38812.5,
+      "type": 15,
+      "posX": 780.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38875.0,
+      "type": 15,
+      "posX": 744.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 38937.5,
+      "type": 15,
+      "posX": 708.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 39000.0,
+      "type": 15,
+      "posX": 672.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 39062.5,
+      "type": 15,
+      "posX": 636.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 39125.0,
+      "type": 15,
+      "posX": 600.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 39187.5,
+      "type": 15,
+      "posX": 564.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 39250.0,
+      "type": 15,
+      "posX": 528.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 39500.0,
+      "type": 0,
+      "posX": 432.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -4.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 39750.0,
+      "type": 16,
+      "posX": 508.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 39812.5,
+      "type": 16,
+      "posX": 576.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 39875.0,
+      "type": 16,
+      "posX": 612.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 39937.5,
+      "type": 16,
+      "posX": 648.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 40000.0,
+      "type": 16,
+      "posX": 684.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 40250.0,
+      "type": 12,
+      "posX": 780.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": 9.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 40500.0,
+      "type": 13,
+      "posX": 876.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": 8.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 40750.0,
+      "type": 12,
+      "posX": 988.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": 7.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 42000.0,
+      "type": 1,
+      "posX": 1348.0,
+      "posY": 376.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 42250.0,
+      "type": 1,
+      "posX": 1252.0,
+      "posY": 376.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 42750.0,
+      "type": 2,
+      "posX": 1060.0,
+      "posY": 376.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 43250.0,
+      "type": 2,
+      "posX": 868.0,
+      "posY": 376.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 43750.0,
+      "type": 2,
+      "posX": 676.0,
+      "posY": 376.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 44250.0,
+      "type": 2,
+      "posX": 484.0,
+      "posY": 376.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 45250.0,
+      "type": 0,
+      "posX": 200.0,
+      "posY": 636.0,
+      "distance": 1200.0,
+      "angle": 20.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 45500.0,
+      "type": 0,
+      "posX": 280.0,
+      "posY": 684.0,
+      "distance": 1200.0,
+      "angle": 15.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 45750.0,
+      "type": 0,
+      "posX": 360.0,
+      "posY": 732.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46000.0,
+      "type": 16,
+      "posX": 440.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46062.5,
+      "type": 16,
+      "posX": 508.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46125.0,
+      "type": 16,
+      "posX": 544.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46187.5,
+      "type": 16,
+      "posX": 580.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46250.0,
+      "type": 16,
+      "posX": 616.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46312.5,
+      "type": 16,
+      "posX": 652.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46375.0,
+      "type": 16,
+      "posX": 688.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46437.5,
+      "type": 16,
+      "posX": 724.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46500.0,
+      "type": 16,
+      "posX": 760.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46562.5,
+      "type": 16,
+      "posX": 796.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46625.0,
+      "type": 16,
+      "posX": 832.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46687.5,
+      "type": 16,
+      "posX": 868.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 46750.0,
+      "type": 16,
+      "posX": 904.0,
+      "posY": 780.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 47000.0,
+      "type": 15,
+      "posX": 968.0,
+      "posY": 700.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 47062.5,
+      "type": 15,
+      "posX": 900.0,
+      "posY": 700.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 47125.0,
+      "type": 15,
+      "posX": 864.0,
+      "posY": 700.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 47187.5,
+      "type": 15,
+      "posX": 828.0,
+      "posY": 700.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 47250.0,
+      "type": 15,
+      "posX": 792.0,
+      "posY": 700.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 47312.5,
+      "type": 15,
+      "posX": 756.0,
+      "posY": 700.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 47375.0,
+      "type": 15,
+      "posX": 720.0,
+      "posY": 700.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 47437.5,
+      "type": 15,
+      "posX": 684.0,
+      "posY": 700.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 47500.0,
+      "type": 15,
+      "posX": 648.0,
+      "posY": 700.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 47750.0,
+      "type": 3,
+      "posX": 552.0,
+      "posY": 508.0,
+      "distance": 880.0,
+      "angle": -45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 47750.0,
+      "type": 1,
+      "posX": 552.0,
+      "posY": 700.0,
+      "distance": 880.0,
+      "angle": -135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 48250.0,
+      "type": 0,
+      "posX": 360.0,
+      "posY": 412.0,
+      "distance": 880.0,
+      "angle": -45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 48250.0,
+      "type": 1,
+      "posX": 360.0,
+      "posY": 700.0,
+      "distance": 880.0,
+      "angle": -135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 49750.0,
+      "type": 3,
+      "posX": 720.0,
+      "posY": 252.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 50000.0,
+      "type": 3,
+      "posX": 816.0,
+      "posY": 252.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 50250.0,
+      "type": 2,
+      "posX": 912.0,
+      "posY": 252.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 50500.0,
+      "type": 2,
+      "posX": 1008.0,
+      "posY": 252.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 50750.0,
+      "type": 0,
+      "posX": 1104.0,
+      "posY": 252.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 51000.0,
+      "type": 0,
+      "posX": 1200.0,
+      "posY": 252.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 51000.0,
+      "type": 3,
+      "posX": 1200.0,
+      "posY": 348.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 51250.0,
+      "type": 0,
+      "posX": 1296.0,
+      "posY": 252.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 51250.0,
+      "type": 2,
+      "posX": 1296.0,
+      "posY": 444.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 51500.0,
+      "type": 0,
+      "posX": 1392.0,
+      "posY": 252.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 51500.0,
+      "type": 5,
+      "posX": 1392.0,
+      "posY": 540.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 53750.0,
+      "type": 3,
+      "posX": 760.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 54000.0,
+      "type": 3,
+      "posX": 680.0,
+      "posY": 788.0,
+      "distance": 1200.0,
+      "angle": 15.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 54375.0,
+      "type": 3,
+      "posX": 560.0,
+      "posY": 716.0,
+      "distance": 1200.0,
+      "angle": 22.5,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 54500.0,
+      "type": 3,
+      "posX": 520.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": 25.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 54875.0,
+      "type": 0,
+      "posX": 400.0,
+      "posY": 620.0,
+      "distance": 1200.0,
+      "angle": 32.5,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 55000.0,
+      "type": 0,
+      "posX": 360.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": 35.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 55125.0,
+      "type": 0,
+      "posX": 320.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 37.5,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 55375.0,
+      "type": 4,
+      "posX": 240.0,
+      "posY": 524.0,
+      "distance": 1200.0,
+      "angle": 42.5,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 57750.0,
+      "type": 3,
+      "posX": 1084.0,
+      "posY": 192.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 58000.0,
+      "type": 3,
+      "posX": 1164.0,
+      "posY": 240.0,
+      "distance": 1200.0,
+      "angle": -175.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 58250.0,
+      "type": 2,
+      "posX": 1244.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": -170.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 58500.0,
+      "type": 2,
+      "posX": 1324.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": -165.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 58750.0,
+      "type": 0,
+      "posX": 1404.0,
+      "posY": 384.0,
+      "distance": 1200.0,
+      "angle": -160.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 59000.0,
+      "type": 0,
+      "posX": 1484.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": -155.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 59250.0,
+      "type": 2,
+      "posX": 1564.0,
+      "posY": 480.0,
+      "distance": 1200.0,
+      "angle": -150.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 59500.0,
+      "type": 6,
+      "posX": 1644.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": -145.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 61750.0,
+      "type": 1,
+      "posX": 852.0,
+      "posY": 868.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 62000.0,
+      "type": 1,
+      "posX": 772.0,
+      "posY": 820.0,
+      "distance": 1200.0,
+      "angle": 15.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 62250.0,
+      "type": 1,
+      "posX": 692.0,
+      "posY": 772.0,
+      "distance": 1200.0,
+      "angle": 20.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 62500.0,
+      "type": 1,
+      "posX": 612.0,
+      "posY": 724.0,
+      "distance": 1200.0,
+      "angle": 25.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 62750.0,
+      "type": 3,
+      "posX": 532.0,
+      "posY": 676.0,
+      "distance": 1200.0,
+      "angle": 30.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 63000.0,
+      "type": 3,
+      "posX": 452.0,
+      "posY": 628.0,
+      "distance": 1200.0,
+      "angle": 35.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 63250.0,
+      "type": 3,
+      "posX": 372.0,
+      "posY": 580.0,
+      "distance": 1200.0,
+      "angle": 40.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 63750.0,
+      "type": 4,
+      "posX": 372.0,
+      "posY": 388.0,
+      "distance": 1200.0,
+      "angle": 50.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 66000.0,
+      "type": 1,
+      "posX": 1536.0,
+      "posY": 384.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 66500.0,
+      "type": 1,
+      "posX": 1376.0,
+      "posY": 480.0,
+      "distance": 1200.0,
+      "angle": 170.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 67000.0,
+      "type": 1,
+      "posX": 1216.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 160.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 67500.0,
+      "type": 1,
+      "posX": 1056.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": 150.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 68000.0,
+      "type": 3,
+      "posX": 896.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 68500.0,
+      "type": 3,
+      "posX": 704.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 69000.0,
+      "type": 0,
+      "posX": 512.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 69375.0,
+      "type": 0,
+      "posX": 368.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 70000.0,
+      "type": 3,
+      "posX": 264.0,
+      "posY": 556.0,
+      "distance": 1200.0,
+      "angle": 140.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 70500.0,
+      "type": 3,
+      "posX": 424.0,
+      "posY": 460.0,
+      "distance": 1200.0,
+      "angle": 150.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 71000.0,
+      "type": 3,
+      "posX": 584.0,
+      "posY": 364.0,
+      "distance": 1200.0,
+      "angle": 160.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 71500.0,
+      "type": 3,
+      "posX": 744.0,
+      "posY": 268.0,
+      "distance": 1200.0,
+      "angle": 170.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 72000.0,
+      "type": 2,
+      "posX": 904.0,
+      "posY": 172.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 72500.0,
+      "type": 2,
+      "posX": 1096.0,
+      "posY": 172.0,
+      "distance": 1200.0,
+      "angle": -178.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 73000.0,
+      "type": 2,
+      "posX": 1288.0,
+      "posY": 172.0,
+      "distance": 1200.0,
+      "angle": -176.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 73375.0,
+      "type": 2,
+      "posX": 1432.0,
+      "posY": 172.0,
+      "distance": 1200.0,
+      "angle": -174.5,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 74000.0,
+      "type": 1,
+      "posX": 1528.0,
+      "posY": 388.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 74500.0,
+      "type": 2,
+      "posX": 1368.0,
+      "posY": 484.0,
+      "distance": 1200.0,
+      "angle": 170.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 75000.0,
+      "type": 1,
+      "posX": 1208.0,
+      "posY": 580.0,
+      "distance": 1200.0,
+      "angle": 160.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 75500.0,
+      "type": 2,
+      "posX": 1048.0,
+      "posY": 676.0,
+      "distance": 1200.0,
+      "angle": 150.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 76000.0,
+      "type": 3,
+      "posX": 888.0,
+      "posY": 772.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 76500.0,
+      "type": 0,
+      "posX": 696.0,
+      "posY": 772.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 77000.0,
+      "type": 7,
+      "posX": 504.0,
+      "posY": 772.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 77750.0,
+      "type": 0,
+      "posX": 340.0,
+      "posY": 536.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 78000.0,
+      "type": 0,
+      "posX": 420.0,
+      "posY": 488.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 78250.0,
+      "type": 3,
+      "posX": 500.0,
+      "posY": 536.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 78500.0,
+      "type": 3,
+      "posX": 580.0,
+      "posY": 488.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 78750.0,
+      "type": 2,
+      "posX": 660.0,
+      "posY": 536.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 79000.0,
+      "type": 2,
+      "posX": 740.0,
+      "posY": 488.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 79250.0,
+      "type": 2,
+      "posX": 820.0,
+      "posY": 536.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 79500.0,
+      "type": 2,
+      "posX": 900.0,
+      "posY": 488.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 79750.0,
+      "type": 1,
+      "posX": 980.0,
+      "posY": 536.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 80000.0,
+      "type": 2,
+      "posX": 1060.0,
+      "posY": 488.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 80250.0,
+      "type": 1,
+      "posX": 1140.0,
+      "posY": 536.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 80500.0,
+      "type": 2,
+      "posX": 1236.0,
+      "posY": 440.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 80500.0,
+      "type": 1,
+      "posX": 1236.0,
+      "posY": 536.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 80750.0,
+      "type": 3,
+      "posX": 1332.0,
+      "posY": 344.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 80750.0,
+      "type": 1,
+      "posX": 1332.0,
+      "posY": 536.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 81000.0,
+      "type": 4,
+      "posX": 1428.0,
+      "posY": 248.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 81000.0,
+      "type": 1,
+      "posX": 1428.0,
+      "posY": 536.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 82000.0,
+      "type": 1,
+      "posX": 1212.0,
+      "posY": 848.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 82250.0,
+      "type": 1,
+      "posX": 1116.0,
+      "posY": 848.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 82750.0,
+      "type": 1,
+      "posX": 924.0,
+      "posY": 848.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 83250.0,
+      "type": 2,
+      "posX": 732.0,
+      "posY": 848.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 83750.0,
+      "type": 2,
+      "posX": 540.0,
+      "posY": 848.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 84250.0,
+      "type": 2,
+      "posX": 348.0,
+      "posY": 848.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 85250.0,
+      "type": 3,
+      "posX": 280.0,
+      "posY": 472.0,
+      "distance": 1200.0,
+      "angle": 20.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 85500.0,
+      "type": 3,
+      "posX": 360.0,
+      "posY": 520.0,
+      "distance": 1200.0,
+      "angle": 15.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 85750.0,
+      "type": 3,
+      "posX": 440.0,
+      "posY": 568.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86000.0,
+      "type": 16,
+      "posX": 520.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86062.5,
+      "type": 16,
+      "posX": 588.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86125.0,
+      "type": 16,
+      "posX": 624.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86187.5,
+      "type": 16,
+      "posX": 660.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86250.0,
+      "type": 16,
+      "posX": 696.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86312.5,
+      "type": 16,
+      "posX": 732.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86375.0,
+      "type": 16,
+      "posX": 768.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86437.5,
+      "type": 16,
+      "posX": 804.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86500.0,
+      "type": 16,
+      "posX": 840.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86562.5,
+      "type": 16,
+      "posX": 876.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86625.0,
+      "type": 16,
+      "posX": 912.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86687.5,
+      "type": 16,
+      "posX": 948.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86750.0,
+      "type": 16,
+      "posX": 984.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86812.5,
+      "type": 16,
+      "posX": 1020.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86875.0,
+      "type": 16,
+      "posX": 1056.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 86937.5,
+      "type": 16,
+      "posX": 1092.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87000.0,
+      "type": 16,
+      "posX": 1128.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87062.5,
+      "type": 16,
+      "posX": 1164.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87125.0,
+      "type": 16,
+      "posX": 1200.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87187.5,
+      "type": 16,
+      "posX": 1236.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87250.0,
+      "type": 16,
+      "posX": 1272.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87500.0,
+      "type": 12,
+      "posX": 1368.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 4.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87750.0,
+      "type": 16,
+      "posX": 1464.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 3.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87812.5,
+      "type": 16,
+      "posX": 1532.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 3.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87875.0,
+      "type": 16,
+      "posX": 1568.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 3.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 87937.5,
+      "type": 16,
+      "posX": 1604.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 3.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 88000.0,
+      "type": 16,
+      "posX": 1640.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 3.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 88250.0,
+      "type": 1,
+      "posX": 1656.0,
+      "posY": 500.0,
+      "distance": 1200.0,
+      "angle": -160.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 88500.0,
+      "type": 1,
+      "posX": 1576.0,
+      "posY": 452.0,
+      "distance": 1200.0,
+      "angle": -165.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 88750.0,
+      "type": 1,
+      "posX": 1496.0,
+      "posY": 404.0,
+      "distance": 1200.0,
+      "angle": -170.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 90000.0,
+      "type": 2,
+      "posX": 1064.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": -170.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 90250.0,
+      "type": 2,
+      "posX": 968.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": -171.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 90750.0,
+      "type": 2,
+      "posX": 776.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": -173.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 91250.0,
+      "type": 0,
+      "posX": 584.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": -175.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 91750.0,
+      "type": 0,
+      "posX": 392.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": -177.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 92250.0,
+      "type": 0,
+      "posX": 200.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": -179.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 93250.0,
+      "type": 2,
+      "posX": 260.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 20.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 93500.0,
+      "type": 2,
+      "posX": 340.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 15.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 93750.0,
+      "type": 2,
+      "posX": 420.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94000.0,
+      "type": 16,
+      "posX": 500.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94062.5,
+      "type": 16,
+      "posX": 568.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94125.0,
+      "type": 16,
+      "posX": 604.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94187.5,
+      "type": 16,
+      "posX": 640.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94250.0,
+      "type": 16,
+      "posX": 676.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94312.5,
+      "type": 16,
+      "posX": 712.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94375.0,
+      "type": 16,
+      "posX": 748.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94437.5,
+      "type": 16,
+      "posX": 784.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94500.0,
+      "type": 16,
+      "posX": 820.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 94750.0,
+      "type": 12,
+      "posX": 916.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95000.0,
+      "type": 16,
+      "posX": 1012.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95062.5,
+      "type": 16,
+      "posX": 1080.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95125.0,
+      "type": 16,
+      "posX": 1116.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95187.5,
+      "type": 16,
+      "posX": 1152.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95250.0,
+      "type": 16,
+      "posX": 1188.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95312.5,
+      "type": 16,
+      "posX": 1224.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95375.0,
+      "type": 16,
+      "posX": 1260.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95437.5,
+      "type": 16,
+      "posX": 1296.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95500.0,
+      "type": 16,
+      "posX": 1332.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95750.0,
+      "type": 15,
+      "posX": 1356.0,
+      "posY": 608.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95812.5,
+      "type": 15,
+      "posX": 1288.0,
+      "posY": 608.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95875.0,
+      "type": 15,
+      "posX": 1252.0,
+      "posY": 608.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 95937.5,
+      "type": 15,
+      "posX": 1216.0,
+      "posY": 608.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 96000.0,
+      "type": 15,
+      "posX": 1180.0,
+      "posY": 608.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 96250.0,
+      "type": 6,
+      "posX": 1084.0,
+      "posY": 608.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 97750.0,
+      "type": 3,
+      "posX": 568.0,
+      "posY": 352.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 98000.0,
+      "type": 3,
+      "posX": 648.0,
+      "posY": 400.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 98250.0,
+      "type": 2,
+      "posX": 728.0,
+      "posY": 352.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 98500.0,
+      "type": 2,
+      "posX": 808.0,
+      "posY": 400.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 98750.0,
+      "type": 1,
+      "posX": 888.0,
+      "posY": 352.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 99000.0,
+      "type": 1,
+      "posX": 968.0,
+      "posY": 400.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 99250.0,
+      "type": 1,
+      "posX": 1048.0,
+      "posY": 352.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 99500.0,
+      "type": 5,
+      "posX": 1128.0,
+      "posY": 400.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 101750.0,
+      "type": 3,
+      "posX": 1580.0,
+      "posY": 588.0,
+      "distance": 1200.0,
+      "angle": -40.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 102000.0,
+      "type": 3,
+      "posX": 1500.0,
+      "posY": 636.0,
+      "distance": 1200.0,
+      "angle": -35.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 102375.0,
+      "type": 3,
+      "posX": 1380.0,
+      "posY": 708.0,
+      "distance": 1200.0,
+      "angle": -27.5,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 102500.0,
+      "type": 3,
+      "posX": 1340.0,
+      "posY": 732.0,
+      "distance": 1200.0,
+      "angle": -25.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 102875.0,
+      "type": 0,
+      "posX": 1220.0,
+      "posY": 804.0,
+      "distance": 1200.0,
+      "angle": -17.5,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 103000.0,
+      "type": 0,
+      "posX": 1180.0,
+      "posY": 828.0,
+      "distance": 1200.0,
+      "angle": -15.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 103125.0,
+      "type": 0,
+      "posX": 1140.0,
+      "posY": 852.0,
+      "distance": 1200.0,
+      "angle": -12.5,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 103375.0,
+      "type": 4,
+      "posX": 1060.0,
+      "posY": 900.0,
+      "distance": 1200.0,
+      "angle": -7.5,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 105750.0,
+      "type": 3,
+      "posX": 260.0,
+      "posY": 468.0,
+      "distance": 1200.0,
+      "angle": 150.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 106000.0,
+      "type": 2,
+      "posX": 340.0,
+      "posY": 420.0,
+      "distance": 1200.0,
+      "angle": 155.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 106250.0,
+      "type": 3,
+      "posX": 420.0,
+      "posY": 372.0,
+      "distance": 1200.0,
+      "angle": 160.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 106500.0,
+      "type": 2,
+      "posX": 500.0,
+      "posY": 324.0,
+      "distance": 1200.0,
+      "angle": 165.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 106750.0,
+      "type": 3,
+      "posX": 580.0,
+      "posY": 276.0,
+      "distance": 1200.0,
+      "angle": 170.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 107000.0,
+      "type": 2,
+      "posX": 660.0,
+      "posY": 228.0,
+      "distance": 1200.0,
+      "angle": 175.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 107250.0,
+      "type": 16,
+      "posX": 740.0,
+      "posY": 180.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 107312.5,
+      "type": 16,
+      "posX": 808.0,
+      "posY": 180.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 107375.0,
+      "type": 16,
+      "posX": 844.0,
+      "posY": 180.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 107437.5,
+      "type": 16,
+      "posX": 880.0,
+      "posY": 180.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 107500.0,
+      "type": 16,
+      "posX": 916.0,
+      "posY": 180.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 107562.5,
+      "type": 16,
+      "posX": 952.0,
+      "posY": 180.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 107625.0,
+      "type": 16,
+      "posX": 988.0,
+      "posY": 180.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 110000.0,
+      "type": 1,
+      "posX": 1584.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": -26.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 110250.0,
+      "type": 2,
+      "posX": 1504.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": -21.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 110500.0,
+      "type": 1,
+      "posX": 1424.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": -16.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 110750.0,
+      "type": 2,
+      "posX": 1344.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": -11.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 111000.0,
+      "type": 1,
+      "posX": 1264.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": -6.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 111250.0,
+      "type": 15,
+      "posX": 1184.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": -1.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 111312.5,
+      "type": 15,
+      "posX": 1116.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": -1.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 111375.0,
+      "type": 15,
+      "posX": 1080.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": -1.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 111437.5,
+      "type": 15,
+      "posX": 1044.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": -1.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 111500.0,
+      "type": 15,
+      "posX": 1008.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": -1.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 111750.0,
+      "type": 13,
+      "posX": 912.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 112750.0,
+      "type": 2,
+      "posX": 592.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": -160.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 113000.0,
+      "type": 6,
+      "posX": 512.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": -165.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 113500.0,
+      "type": 3,
+      "posX": 352.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": -175.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 113750.0,
+      "type": 7,
+      "posX": 272.0,
+      "posY": 384.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 118000.0,
+      "type": 0,
+      "posX": 576.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 119000.0,
+      "type": 2,
+      "posX": 960.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 120000.0,
+      "type": 1,
+      "posX": 1344.0,
+      "posY": 336.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 122000.0,
+      "type": 1,
+      "posX": 1536.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 122500.0,
+      "type": 1,
+      "posX": 1344.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 2.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 123000.0,
+      "type": 1,
+      "posX": 1152.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 4.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 123500.0,
+      "type": 1,
+      "posX": 960.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 6.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 124000.0,
+      "type": 0,
+      "posX": 800.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": 16.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 124500.0,
+      "type": 0,
+      "posX": 640.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 26.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 125000.0,
+      "type": 0,
+      "posX": 480.0,
+      "posY": 480.0,
+      "distance": 1200.0,
+      "angle": 36.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 125500.0,
+      "type": 0,
+      "posX": 320.0,
+      "posY": 384.0,
+      "distance": 1200.0,
+      "angle": 46.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 126000.0,
+      "type": 0,
+      "posX": 864.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 126250.0,
+      "type": 0,
+      "posX": 960.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 126500.0,
+      "type": 0,
+      "posX": 1056.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 126750.0,
+      "type": 0,
+      "posX": 1152.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 127000.0,
+      "type": 3,
+      "posX": 1248.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 127250.0,
+      "type": 3,
+      "posX": 1344.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 127500.0,
+      "type": 3,
+      "posX": 1440.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 127750.0,
+      "type": 3,
+      "posX": 1536.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 128000.0,
+      "type": 0,
+      "posX": 288.0,
+      "posY": 288.0,
+      "distance": 880.0,
+      "angle": -45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 128000.0,
+      "type": 3,
+      "posX": 1632.0,
+      "posY": 288.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 128000.0,
+      "type": 2,
+      "posX": 288.0,
+      "posY": 768.0,
+      "distance": 880.0,
+      "angle": -135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 128000.0,
+      "type": 1,
+      "posX": 1632.0,
+      "posY": 768.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 130000.0,
+      "type": 1,
+      "posX": 1632.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 130250.0,
+      "type": 1,
+      "posX": 1536.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 1.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 130750.0,
+      "type": 2,
+      "posX": 1376.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": 11.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 131250.0,
+      "type": 2,
+      "posX": 1216.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 21.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 131750.0,
+      "type": 2,
+      "posX": 1056.0,
+      "posY": 480.0,
+      "distance": 1200.0,
+      "angle": 31.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 132250.0,
+      "type": 6,
+      "posX": 896.0,
+      "posY": 384.0,
+      "distance": 1200.0,
+      "angle": 41.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 133250.0,
+      "type": 3,
+      "posX": 540.0,
+      "posY": 524.0,
+      "distance": 1200.0,
+      "angle": 15.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 133500.0,
+      "type": 1,
+      "posX": 620.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 133750.0,
+      "type": 3,
+      "posX": 700.0,
+      "posY": 620.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134000.0,
+      "type": 16,
+      "posX": 780.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134062.5,
+      "type": 16,
+      "posX": 848.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134125.0,
+      "type": 16,
+      "posX": 884.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134187.5,
+      "type": 16,
+      "posX": 920.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134250.0,
+      "type": 16,
+      "posX": 956.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134312.5,
+      "type": 16,
+      "posX": 992.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134375.0,
+      "type": 16,
+      "posX": 1028.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134437.5,
+      "type": 16,
+      "posX": 1064.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134500.0,
+      "type": 16,
+      "posX": 1100.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134562.5,
+      "type": 16,
+      "posX": 1136.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134625.0,
+      "type": 16,
+      "posX": 1172.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134687.5,
+      "type": 16,
+      "posX": 1208.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134750.0,
+      "type": 16,
+      "posX": 1244.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134812.5,
+      "type": 16,
+      "posX": 1280.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134875.0,
+      "type": 16,
+      "posX": 1316.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 134937.5,
+      "type": 16,
+      "posX": 1352.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 135000.0,
+      "type": 16,
+      "posX": 1388.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 135062.5,
+      "type": 16,
+      "posX": 1424.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 135125.0,
+      "type": 16,
+      "posX": 1460.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 135187.5,
+      "type": 16,
+      "posX": 1496.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 135250.0,
+      "type": 16,
+      "posX": 1532.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 135500.0,
+      "type": 1,
+      "posX": 1628.0,
+      "posY": 668.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 135750.0,
+      "type": 15,
+      "posX": 1628.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 135812.5,
+      "type": 15,
+      "posX": 1560.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 135875.0,
+      "type": 15,
+      "posX": 1524.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 135937.5,
+      "type": 15,
+      "posX": 1488.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 136000.0,
+      "type": 15,
+      "posX": 1452.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 136250.0,
+      "type": 2,
+      "posX": 1356.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 136500.0,
+      "type": 2,
+      "posX": 1260.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 136750.0,
+      "type": 2,
+      "posX": 1164.0,
+      "posY": 572.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 138000.0,
+      "type": 3,
+      "posX": 760.0,
+      "posY": 308.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 138250.0,
+      "type": 3,
+      "posX": 856.0,
+      "posY": 308.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 138750.0,
+      "type": 3,
+      "posX": 1048.0,
+      "posY": 308.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 139250.0,
+      "type": 3,
+      "posX": 1208.0,
+      "posY": 404.0,
+      "distance": 1200.0,
+      "angle": -170.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 139750.0,
+      "type": 3,
+      "posX": 1368.0,
+      "posY": 500.0,
+      "distance": 1200.0,
+      "angle": -160.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 140250.0,
+      "type": 7,
+      "posX": 1528.0,
+      "posY": 596.0,
+      "distance": 1200.0,
+      "angle": -150.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 141250.0,
+      "type": 1,
+      "posX": 1212.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 141500.0,
+      "type": 1,
+      "posX": 1116.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 141750.0,
+      "type": 1,
+      "posX": 1020.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142000.0,
+      "type": 15,
+      "posX": 924.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142062.5,
+      "type": 15,
+      "posX": 856.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142125.0,
+      "type": 15,
+      "posX": 820.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142187.5,
+      "type": 15,
+      "posX": 784.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142250.0,
+      "type": 15,
+      "posX": 748.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142312.5,
+      "type": 15,
+      "posX": 712.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142375.0,
+      "type": 15,
+      "posX": 676.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142437.5,
+      "type": 15,
+      "posX": 640.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142500.0,
+      "type": 15,
+      "posX": 604.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142562.5,
+      "type": 15,
+      "posX": 568.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142625.0,
+      "type": 15,
+      "posX": 532.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142687.5,
+      "type": 15,
+      "posX": 496.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 142750.0,
+      "type": 15,
+      "posX": 460.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 143000.0,
+      "type": 16,
+      "posX": 404.0,
+      "posY": 728.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 143062.5,
+      "type": 16,
+      "posX": 472.0,
+      "posY": 728.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 143125.0,
+      "type": 16,
+      "posX": 508.0,
+      "posY": 728.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 143187.5,
+      "type": 16,
+      "posX": 544.0,
+      "posY": 728.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 143250.0,
+      "type": 16,
+      "posX": 580.0,
+      "posY": 728.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 143312.5,
+      "type": 16,
+      "posX": 616.0,
+      "posY": 728.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 143375.0,
+      "type": 16,
+      "posX": 652.0,
+      "posY": 728.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 143437.5,
+      "type": 16,
+      "posX": 688.0,
+      "posY": 728.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 143500.0,
+      "type": 16,
+      "posX": 724.0,
+      "posY": 728.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 143750.0,
+      "type": 2,
+      "posX": 820.0,
+      "posY": 632.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 143750.0,
+      "type": 1,
+      "posX": 820.0,
+      "posY": 728.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 144250.0,
+      "type": 3,
+      "posX": 1012.0,
+      "posY": 536.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 144250.0,
+      "type": 1,
+      "posX": 1012.0,
+      "posY": 728.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 145750.0,
+      "type": 2,
+      "posX": 1492.0,
+      "posY": 248.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 146000.0,
+      "type": 2,
+      "posX": 1412.0,
+      "posY": 296.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 146250.0,
+      "type": 3,
+      "posX": 1332.0,
+      "posY": 248.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 146500.0,
+      "type": 3,
+      "posX": 1252.0,
+      "posY": 296.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 146750.0,
+      "type": 2,
+      "posX": 1172.0,
+      "posY": 248.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 147000.0,
+      "type": 2,
+      "posX": 1092.0,
+      "posY": 296.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 147250.0,
+      "type": 3,
+      "posX": 1012.0,
+      "posY": 248.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 147500.0,
+      "type": 3,
+      "posX": 932.0,
+      "posY": 296.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 149750.0,
+      "type": 3,
+      "posX": 284.0,
+      "posY": 864.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 150000.0,
+      "type": 3,
+      "posX": 380.0,
+      "posY": 864.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 150375.0,
+      "type": 3,
+      "posX": 524.0,
+      "posY": 864.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 150500.0,
+      "type": 3,
+      "posX": 572.0,
+      "posY": 864.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 150875.0,
+      "type": 2,
+      "posX": 716.0,
+      "posY": 864.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 151000.0,
+      "type": 2,
+      "posX": 764.0,
+      "posY": 864.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 151125.0,
+      "type": 2,
+      "posX": 812.0,
+      "posY": 864.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 151375.0,
+      "type": 13,
+      "posX": 908.0,
+      "posY": 864.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 153750.0,
+      "type": 2,
+      "posX": 1680.0,
+      "posY": 388.0,
+      "distance": 1200.0,
+      "angle": -160.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 154000.0,
+      "type": 2,
+      "posX": 1600.0,
+      "posY": 340.0,
+      "distance": 1200.0,
+      "angle": -165.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 154250.0,
+      "type": 2,
+      "posX": 1520.0,
+      "posY": 292.0,
+      "distance": 1200.0,
+      "angle": -170.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 154500.0,
+      "type": 2,
+      "posX": 1440.0,
+      "posY": 244.0,
+      "distance": 1200.0,
+      "angle": -175.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 154750.0,
+      "type": 0,
+      "posX": 1360.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 155000.0,
+      "type": 0,
+      "posX": 1264.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": 179.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 155250.0,
+      "type": 12,
+      "posX": 1168.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": 178.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 155500.0,
+      "type": 13,
+      "posX": 1056.0,
+      "posY": 196.0,
+      "distance": 1200.0,
+      "angle": 177.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 157750.0,
+      "type": 0,
+      "posX": 240.0,
+      "posY": 432.0,
+      "distance": 1200.0,
+      "angle": 40.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 158000.0,
+      "type": 0,
+      "posX": 320.0,
+      "posY": 480.0,
+      "distance": 1200.0,
+      "angle": 35.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 158250.0,
+      "type": 0,
+      "posX": 400.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 30.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 158500.0,
+      "type": 3,
+      "posX": 480.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 25.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 158750.0,
+      "type": 3,
+      "posX": 560.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 20.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 159000.0,
+      "type": 2,
+      "posX": 640.0,
+      "posY": 672.0,
+      "distance": 1200.0,
+      "angle": 15.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 159250.0,
+      "type": 2,
+      "posX": 720.0,
+      "posY": 720.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 159750.0,
+      "type": 6,
+      "posX": 880.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 162000.0,
+      "type": 1,
+      "posX": 1580.0,
+      "posY": 316.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 162250.0,
+      "type": 1,
+      "posX": 1484.0,
+      "posY": 316.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 162750.0,
+      "type": 1,
+      "posX": 1292.0,
+      "posY": 316.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 163250.0,
+      "type": 1,
+      "posX": 1100.0,
+      "posY": 316.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 163750.0,
+      "type": 1,
+      "posX": 908.0,
+      "posY": 316.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 164250.0,
+      "type": 1,
+      "posX": 716.0,
+      "posY": 316.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 165250.0,
+      "type": 3,
+      "posX": 372.0,
+      "posY": 480.0,
+      "distance": 1200.0,
+      "angle": 15.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 165500.0,
+      "type": 3,
+      "posX": 452.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 10.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 165750.0,
+      "type": 3,
+      "posX": 532.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": 5.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166000.0,
+      "type": 16,
+      "posX": 612.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166062.5,
+      "type": 16,
+      "posX": 680.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166125.0,
+      "type": 16,
+      "posX": 716.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166187.5,
+      "type": 16,
+      "posX": 752.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166250.0,
+      "type": 16,
+      "posX": 788.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166312.5,
+      "type": 16,
+      "posX": 824.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166375.0,
+      "type": 16,
+      "posX": 860.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166437.5,
+      "type": 16,
+      "posX": 896.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166500.0,
+      "type": 16,
+      "posX": 932.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166562.5,
+      "type": 16,
+      "posX": 968.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166625.0,
+      "type": 16,
+      "posX": 1004.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166687.5,
+      "type": 16,
+      "posX": 1040.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166750.0,
+      "type": 16,
+      "posX": 1076.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166812.5,
+      "type": 16,
+      "posX": 1112.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166875.0,
+      "type": 16,
+      "posX": 1148.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 166937.5,
+      "type": 16,
+      "posX": 1184.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167000.0,
+      "type": 16,
+      "posX": 1220.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167062.5,
+      "type": 16,
+      "posX": 1256.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167125.0,
+      "type": 16,
+      "posX": 1292.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167187.5,
+      "type": 16,
+      "posX": 1328.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167250.0,
+      "type": 16,
+      "posX": 1364.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167500.0,
+      "type": 1,
+      "posX": 1460.0,
+      "posY": 624.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167750.0,
+      "type": 15,
+      "posX": 1460.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167812.5,
+      "type": 15,
+      "posX": 1392.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167875.0,
+      "type": 15,
+      "posX": 1356.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 167937.5,
+      "type": 15,
+      "posX": 1320.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 168000.0,
+      "type": 15,
+      "posX": 1284.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 168250.0,
+      "type": 2,
+      "posX": 1188.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 168500.0,
+      "type": 2,
+      "posX": 1092.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 168750.0,
+      "type": 6,
+      "posX": 996.0,
+      "posY": 528.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 170000.0,
+      "type": 0,
+      "posX": 540.0,
+      "posY": 388.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 170250.0,
+      "type": 0,
+      "posX": 636.0,
+      "posY": 388.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 170750.0,
+      "type": 0,
+      "posX": 828.0,
+      "posY": 388.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 171250.0,
+      "type": 0,
+      "posX": 1020.0,
+      "posY": 388.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 171750.0,
+      "type": 0,
+      "posX": 1212.0,
+      "posY": 388.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 172250.0,
+      "type": 0,
+      "posX": 1404.0,
+      "posY": 388.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 173250.0,
+      "type": 1,
+      "posX": 1632.0,
+      "posY": 692.0,
+      "distance": 1200.0,
+      "angle": -15.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 173500.0,
+      "type": 1,
+      "posX": 1552.0,
+      "posY": 740.0,
+      "distance": 1200.0,
+      "angle": -10.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 173750.0,
+      "type": 1,
+      "posX": 1472.0,
+      "posY": 788.0,
+      "distance": 1200.0,
+      "angle": -5.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174000.0,
+      "type": 15,
+      "posX": 1392.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174062.5,
+      "type": 15,
+      "posX": 1324.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174125.0,
+      "type": 15,
+      "posX": 1288.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174187.5,
+      "type": 15,
+      "posX": 1252.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174250.0,
+      "type": 15,
+      "posX": 1216.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174312.5,
+      "type": 15,
+      "posX": 1180.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174375.0,
+      "type": 15,
+      "posX": 1144.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174437.5,
+      "type": 15,
+      "posX": 1108.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174500.0,
+      "type": 15,
+      "posX": 1072.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174562.5,
+      "type": 15,
+      "posX": 1036.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174625.0,
+      "type": 15,
+      "posX": 1000.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174687.5,
+      "type": 15,
+      "posX": 964.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 174750.0,
+      "type": 15,
+      "posX": 928.0,
+      "posY": 836.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 175000.0,
+      "type": 16,
+      "posX": 872.0,
+      "posY": 744.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 175062.5,
+      "type": 16,
+      "posX": 940.0,
+      "posY": 744.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 175125.0,
+      "type": 16,
+      "posX": 976.0,
+      "posY": 744.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 175187.5,
+      "type": 16,
+      "posX": 1012.0,
+      "posY": 744.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 175250.0,
+      "type": 16,
+      "posX": 1048.0,
+      "posY": 744.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 175312.5,
+      "type": 16,
+      "posX": 1084.0,
+      "posY": 744.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 175375.0,
+      "type": 16,
+      "posX": 1120.0,
+      "posY": 744.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 175437.5,
+      "type": 16,
+      "posX": 1156.0,
+      "posY": 744.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 175500.0,
+      "type": 16,
+      "posX": 1192.0,
+      "posY": 744.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 175750.0,
+      "type": 3,
+      "posX": 1288.0,
+      "posY": 552.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 175750.0,
+      "type": 1,
+      "posX": 1288.0,
+      "posY": 744.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 176250.0,
+      "type": 0,
+      "posX": 1480.0,
+      "posY": 456.0,
+      "distance": 880.0,
+      "angle": 45.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 176250.0,
+      "type": 1,
+      "posX": 1480.0,
+      "posY": 744.0,
+      "distance": 880.0,
+      "angle": 135.0,
+      "amplitude": 500,
+      "frequency": 0
+    },
+    {
+      "time": 177250.0,
+      "type": 1,
+      "posX": 1148.0,
+      "posY": 264.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 177500.0,
+      "type": 1,
+      "posX": 1052.0,
+      "posY": 264.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 177750.0,
+      "type": 1,
+      "posX": 956.0,
+      "posY": 264.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 178000.0,
+      "type": 1,
+      "posX": 860.0,
+      "posY": 264.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 178500.0,
+      "type": 3,
+      "posX": 700.0,
+      "posY": 360.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 179000.0,
+      "type": 1,
+      "posX": 860.0,
+      "posY": 456.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 179500.0,
+      "type": 3,
+      "posX": 700.0,
+      "posY": 552.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 180000.0,
+      "type": 5,
+      "posX": 860.0,
+      "posY": 648.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 181875.0,
+      "type": 2,
+      "posX": 1568.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 182000.0,
+      "type": 2,
+      "posX": 1520.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 182375.0,
+      "type": 3,
+      "posX": 1376.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 182500.0,
+      "type": 3,
+      "posX": 1328.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 182875.0,
+      "type": 0,
+      "posX": 1184.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 183000.0,
+      "type": 0,
+      "posX": 1136.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 183125.0,
+      "type": 0,
+      "posX": 1088.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 183500.0,
+      "type": 0,
+      "posX": 944.0,
+      "posY": 768.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 185250.0,
+      "type": 0,
+      "posX": 436.0,
+      "posY": 328.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 185500.0,
+      "type": 0,
+      "posX": 532.0,
+      "posY": 328.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 185750.0,
+      "type": 0,
+      "posX": 628.0,
+      "posY": 328.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 186000.0,
+      "type": 0,
+      "posX": 724.0,
+      "posY": 328.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 186500.0,
+      "type": 2,
+      "posX": 884.0,
+      "posY": 424.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 187000.0,
+      "type": 0,
+      "posX": 724.0,
+      "posY": 520.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 187500.0,
+      "type": 2,
+      "posX": 884.0,
+      "posY": 616.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 188000.0,
+      "type": 4,
+      "posX": 724.0,
+      "posY": 712.0,
+      "distance": 1200.0,
+      "angle": 180.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 189875.0,
+      "type": 1,
+      "posX": 1432.0,
+      "posY": 576.0,
+      "distance": 1200.0,
+      "angle": -140.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 190000.0,
+      "type": 1,
+      "posX": 1392.0,
+      "posY": 552.0,
+      "distance": 1200.0,
+      "angle": -142.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 190375.0,
+      "type": 2,
+      "posX": 1272.0,
+      "posY": 480.0,
+      "distance": 1200.0,
+      "angle": -150.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 190500.0,
+      "type": 2,
+      "posX": 1232.0,
+      "posY": 456.0,
+      "distance": 1200.0,
+      "angle": -152.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 190875.0,
+      "type": 3,
+      "posX": 1112.0,
+      "posY": 384.0,
+      "distance": 1200.0,
+      "angle": -160.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 191000.0,
+      "type": 3,
+      "posX": 1072.0,
+      "posY": 360.0,
+      "distance": 1200.0,
+      "angle": -162.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 191375.0,
+      "type": 0,
+      "posX": 952.0,
+      "posY": 288.0,
+      "distance": 1200.0,
+      "angle": -170.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 191500.0,
+      "type": 0,
+      "posX": 912.0,
+      "posY": 264.0,
+      "distance": 1200.0,
+      "angle": -172.5,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 192875.0,
+      "type": 3,
+      "posX": 580.0,
+      "posY": 676.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 193000.0,
+      "type": 3,
+      "posX": 628.0,
+      "posY": 676.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 193375.0,
+      "type": 2,
+      "posX": 772.0,
+      "posY": 676.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 193500.0,
+      "type": 2,
+      "posX": 820.0,
+      "posY": 676.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": -2
+    },
+    {
+      "time": 194875.0,
+      "type": 1,
+      "posX": 1324.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 195000.0,
+      "type": 1,
+      "posX": 1276.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 195375.0,
+      "type": 2,
+      "posX": 1132.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    },
+    {
+      "time": 195500.0,
+      "type": 2,
+      "posX": 1084.0,
+      "posY": 816.0,
+      "distance": 1200.0,
+      "angle": 0.0,
+      "amplitude": 500,
+      "frequency": 2
+    }
+  ]
+}

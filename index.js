@@ -78,7 +78,7 @@ class Example extends Phaser.Scene
        
         this.chartTime = 0.0;
         
-        for (let i = 0; i < 12; i++)
+        for (let i = 0; i < 13; i++)
         {
             const num = i.toString().padStart(2, "0");
             this.load.image(getNoteSprName(i, "BTN"), "/sprites/PSB" + num + ".png");

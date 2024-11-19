@@ -10,6 +10,12 @@ const SongStorageDirs = ["/default/song"];
 //
 //
 
+const CoolWindow = 30;
+const FineWindow = 70;
+const SafeWindow = 100;
+const BadWindow  = 130;
+const NoteVanishLength = 100;
+
 // NOTE: Phaser helper functions
 function getNoteSprName(noteType, sprType) {
     return sprType + noteType.toString().padStart(2, "0");
@@ -128,7 +134,8 @@ class Example extends Phaser.Scene
 
             const noteSpawnTime = note["time"] - flyingTime;
             const noteHitTime = note["time"];
-            const noteDespawnTime = note["time"] + 100;
+            const noteWindowEnd = noteHitTime + BadWindow;
+            const noteDespawnTime = noteWindowEnd + NoteVanishLength;
             
             if (this.chartTime >= noteSpawnTime) {
                 if (!note["added"]) {
@@ -154,6 +161,10 @@ class Example extends Phaser.Scene
                     noteObject["target"].setDisplaySize(46, 46);
                     noteObject["button"].setDisplaySize(46, 46);
 
+                    // NOTE: Set Z index so that buttons always appear on top of targets
+                    noteObject["target"].depth = 99;
+                    noteObject["button"].depth = 100;
+
                     this.noteObjects.push(noteObject);
                     note["added"] = true;
                 }
@@ -171,6 +182,13 @@ class Example extends Phaser.Scene
                     buttonScaledPos[0],
                     buttonScaledPos[1]
                 );
+
+                // NOTE: Do the note's "shrinking" exit animation once it's past it's hit time
+                if (this.chartTime >= noteWindowEnd && this.chartTime < noteDespawnTime) {
+                    const progress = (this.chartTime - noteWindowEnd) / NoteVanishLength;
+                    const scale = 1.0 - progress;
+                    this.noteObjects[noteIndex]["button"].setDisplaySize(46 * scale, 46 * scale);
+                }
 
                 //
                 //

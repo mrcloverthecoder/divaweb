@@ -14,7 +14,7 @@ const CoolWindow = 30;
 const FineWindow = 70;
 const SafeWindow = 100;
 const BadWindow  = 130;
-const NoteVanishLength = 100;
+const NoteVanishLength = 133;
 
 // NOTE: Phaser helper functions
 function getNoteSprName(noteType, sprType) {
@@ -96,6 +96,8 @@ class Example extends Phaser.Scene
     {
         if (IsDebug) {
             this.dbgTimeTxt = this.add.text(10, 10, "time: 0.0");
+            this.dbgNoteRank = "none"
+            this.dbgRankTxt = this.add.text(10, 30, "");
         }
 
         this.notesSpawned = []
@@ -114,17 +116,31 @@ class Example extends Phaser.Scene
     {
         this.updateInput();
         if (this.chartLoaded) {
-            this.chart["notes"].forEach((note, noteIndex) => {
+            this.chart["notes"].every((note, noteIndex) => {
                 const windowStart = note["time"] - BadWindow;
                 const windowEnd = note["time"] + BadWindow;
-                if (this.chartTime >= windowStart && this.chartTime <= windowEnd) {
+
+                // NOTE: This check makes multi-notes impossible to hit, as it will only allow
+                //       a single note to be checked each frame. That's fine for now, because
+                //       I only plan on adding F-style charts, but I should definitely seek
+                //       for a better way to do this.
+                //
+                // TODO: What can I do to improve this check?
+                if (this.chartTime >= windowStart && this.chartTime <= windowEnd && !note["dead"]) {
                     this.processNoteHit(this.chart, note, noteIndex);
+
+                    // NOTE: Return false to break the loop after the first note
+                    //       matching the conditions is met
+                    return false;
                 }
+
+                return true;
             });
         }
 
         if (IsDebug) {
             this.dbgTimeTxt.text = "time: " + (this.chartTime / 1000.0).toFixed(2);
+            this.dbgRankTxt.text = "rank: " + this.dbgNoteRank;
         }
     }
 
@@ -147,8 +163,8 @@ class Example extends Phaser.Scene
 
             const noteSpawnTime = note["time"] - flyingTime;
             const noteHitTime = note["time"];
-            const noteWindowEnd = noteHitTime + BadWindow;
-            const noteDespawnTime = noteWindowEnd + NoteVanishLength;
+            const noteDespawnBeginTime = noteHitTime + SafeWindow;
+            const noteDespawnTime = noteDespawnBeginTime + NoteVanishLength;
             
             if (this.chartTime >= noteSpawnTime) {
                 if (!note["added"]) {
@@ -197,8 +213,9 @@ class Example extends Phaser.Scene
                 );
 
                 // NOTE: Do the note's "shrinking" exit animation once it's past it's hit time
-                if (this.chartTime >= noteWindowEnd && this.chartTime < noteDespawnTime) {
-                    const scale = 1.0 - (this.chartTime - noteWindowEnd) / NoteVanishLength;
+                if (this.chartTime >= noteDespawnBeginTime && this.chartTime < noteDespawnTime) {
+                    const scale = 1.0 - (this.chartTime - noteDespawnBeginTime) / NoteVanishLength;
+                    this.noteObjects[noteIndex]["target"].setDisplaySize(46 * scale, 46 * scale);
                     this.noteObjects[noteIndex]["button"].setDisplaySize(46 * scale, 46 * scale);
                 }
 
@@ -220,7 +237,7 @@ class Example extends Phaser.Scene
         const arrowKeyMap = ["up", "right", "down", "left"];
 
         const noteType = note["type"];
-        let noteHit = "none";
+        let noteWasHit = false;
 
         // --- Normal notes ---
         // 0 - Triangle
@@ -230,7 +247,7 @@ class Example extends Phaser.Scene
         if (noteType >= 0 && noteType < 4) {
             if (this.isKeyTapped(faceKeyMap[noteType]) || this.isKeyTapped(arrowKeyMap[noteType])) {
                 console.log("oi!");
-                noteHit = "h";
+                noteWasHit = true;
             }
         }
         // --- Double notes ---
@@ -245,11 +262,28 @@ class Example extends Phaser.Scene
 
             if (wCond1 || wCond2) {
                 console.log("oi 2!");
-                noteHit = "h";
+                noteWasHit = true;
             }
         }
 
-        if (noteHit != "none") {
+        if (noteWasHit) {
+            // NOTE: Evaluate note hit 
+            const noteHitTime = this.chartTime - note["time"];
+
+            if (noteHitTime <= CoolWindow && noteHitTime >= -CoolWindow) {
+                this.dbgNoteRank = "cool";
+            }
+            else if (noteHitTime <= FineWindow && noteHitTime >= -FineWindow) {
+                this.dbgNoteRank = "fine";
+            }
+            else if (noteHitTime <= SafeWindow && noteHitTime >= -SafeWindow) {
+                this.dbgNoteRank = "safe";
+            }
+            else if (noteHitTime <= BadWindow && noteHitTime >= -BadWindow) {
+                this.dbgNoteRank = "bad";
+            }
+
+            // NOTE: Hide visual note sprite
             this.noteObjects[noteIndex]["target"].visible = false;
             this.noteObjects[noteIndex]["button"].visible = false;
             note["dead"] = true;

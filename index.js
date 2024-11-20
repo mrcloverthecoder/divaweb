@@ -106,10 +106,23 @@ class Example extends Phaser.Scene
             callbackScope: this,
             loop: true,
         });
+        
+        this.initInput();
     }
 
     update()
     {
+        this.updateInput();
+        if (this.chartLoaded) {
+            this.chart["notes"].forEach((note, noteIndex) => {
+                const windowStart = note["time"] - BadWindow;
+                const windowEnd = note["time"] + BadWindow;
+                if (this.chartTime >= windowStart && this.chartTime <= windowEnd) {
+                    this.processNoteHit(this.chart, note, noteIndex);
+                }
+            });
+        }
+
         if (IsDebug) {
             this.dbgTimeTxt.text = "time: " + (this.chartTime / 1000.0).toFixed(2);
         }
@@ -185,8 +198,7 @@ class Example extends Phaser.Scene
 
                 // NOTE: Do the note's "shrinking" exit animation once it's past it's hit time
                 if (this.chartTime >= noteWindowEnd && this.chartTime < noteDespawnTime) {
-                    const progress = (this.chartTime - noteWindowEnd) / NoteVanishLength;
-                    const scale = 1.0 - progress;
+                    const scale = 1.0 - (this.chartTime - noteWindowEnd) / NoteVanishLength;
                     this.noteObjects[noteIndex]["button"].setDisplaySize(46 * scale, 46 * scale);
                 }
 
@@ -200,6 +212,106 @@ class Example extends Phaser.Scene
                 }
             }
         });
+    }
+
+    processNoteHit(chart, note, noteIndex)
+    {
+        const faceKeyMap  = ["tri", "circle", "cross", "square"];
+        const arrowKeyMap = ["up", "right", "down", "left"];
+
+        const noteType = note["type"];
+        let noteHit = "none";
+
+        // --- Normal notes ---
+        // 0 - Triangle
+        // 1 - Circle
+        // 2 - Cross
+        // 3 - Square
+        if (noteType >= 0 && noteType < 4) {
+            if (this.isKeyTapped(faceKeyMap[noteType]) || this.isKeyTapped(arrowKeyMap[noteType])) {
+                console.log("oi!");
+                noteHit = "h";
+            }
+        }
+        // --- Double notes ---
+        // 4 - Up W
+        // 5 - Right W
+        // 6 - Down W
+        // 7 - Left W
+        else if (noteType >= 4 && noteType < 8) {
+            const index = noteType - 4;
+            const wCond1 = this.isKeyTapped(faceKeyMap[index]) && this.isKeyDown(arrowKeyMap[index]);
+            const wCond2 = this.isKeyTapped(arrowKeyMap[index]) && this.isKeyDown(faceKeyMap[index]);
+
+            if (wCond1 || wCond2) {
+                console.log("oi 2!");
+                noteHit = "h";
+            }
+        }
+
+        if (noteHit != "none") {
+            this.noteObjects[noteIndex]["target"].visible = false;
+            this.noteObjects[noteIndex]["button"].visible = false;
+            note["dead"] = true;
+        }
+    }
+
+    // Phaser's input functions didn't have some stuff I needed (or maybe I just didn't look
+    // far enough into the documentation), so I decided to make my own sort of "wrapper" around it.
+    //
+    isKeyUp(k) { return !this.divaInput[k]["cur"]; }
+    isKeyDown(k) { return this.divaInput[k]["cur"]; }
+    isKeyTapped(k) { return this.divaInput[k]["cur"] && !this.divaInput[k]["prev"]; }
+    isKeyReleased(k) { return !this.divaInput[k]["cur"] && this.divaInput[k]["prev"]; }
+
+    initInput()
+    {
+        this.divaInput = {};
+        this.divaInput["tri"] = { "prev": false, "cur": false };
+        this.divaInput["circle"] = { "prev": false, "cur": false };
+        this.divaInput["cross"] = { "prev": false, "cur": false };
+        this.divaInput["square"] = { "prev": false, "cur": false };
+        this.divaInput["up"] = { "prev": false, "cur": false };
+        this.divaInput["right"] = { "prev": false, "cur": false };
+        this.divaInput["down"] = { "prev": false, "cur": false };
+        this.divaInput["left"] = { "prev": false, "cur": false };
+
+        this.keyTriangle = this.input.keyboard.addKey("I");
+        this.keyCircle = this.input.keyboard.addKey("L");
+        this.keyCross = this.input.keyboard.addKey("K");
+        this.keySquare = this.input.keyboard.addKey("J");
+
+        this.keyUp = this.input.keyboard.addKey("W");
+        this.keyRight = this.input.keyboard.addKey("D");
+        this.keyDown = this.input.keyboard.addKey("S");
+        this.keyLeft = this.input.keyboard.addKey("A");
+    }
+
+    updateInput()
+    {
+        this.divaInput["tri"]["prev"] = this.divaInput["tri"]["cur"];
+        this.divaInput["tri"]["cur"]  = this.keyTriangle.isDown;
+
+        this.divaInput["circle"]["prev"] = this.divaInput["circle"]["cur"];
+        this.divaInput["circle"]["cur"]  = this.keyCircle.isDown;
+        
+        this.divaInput["cross"]["prev"] = this.divaInput["cross"]["cur"];
+        this.divaInput["cross"]["cur"]  = this.keyCross.isDown;
+
+        this.divaInput["square"]["prev"] = this.divaInput["square"]["cur"];
+        this.divaInput["square"]["cur"]  = this.keySquare.isDown;
+
+        this.divaInput["up"]["prev"] = this.divaInput["up"]["cur"];
+        this.divaInput["up"]["cur"]  = this.keyUp.isDown;
+
+        this.divaInput["right"]["prev"] = this.divaInput["right"]["cur"];
+        this.divaInput["right"]["cur"]  = this.keyRight.isDown;
+        
+        this.divaInput["down"]["prev"] = this.divaInput["down"]["cur"];
+        this.divaInput["down"]["cur"]  = this.keyDown.isDown;
+
+        this.divaInput["left"]["prev"] = this.divaInput["left"]["cur"];
+        this.divaInput["left"]["cur"]  = this.keyLeft.isDown;
     }
 }
 

@@ -100,21 +100,18 @@ class Example extends Phaser.Scene
             this.dbgRankTxt = this.add.text(10, 30, "");
         }
 
-        this.notesSpawned = []
-        this.chartTimer = this.time.addEvent({
-            delay: 1000.0 / 60.0,
-            callback: this.updateNotes,
-            args: [],
-            callbackScope: this,
-            loop: true,
-        });
-        
         this.initInput();
+
+        this.notesSpawned = []
+        this.chartTimer = new HighResolutionTimer();
+        this.chartTimer.start();
     }
 
     update()
     {
         this.updateInput();
+        this.chartTime = this.chartTimer.getEllapsed();
+
         if (this.chartLoaded) {
             this.chart["notes"].every((note, noteIndex) => {
                 const windowStart = note["time"] - BadWindow;
@@ -138,6 +135,8 @@ class Example extends Phaser.Scene
             });
         }
 
+        this.updateNotes();
+
         if (IsDebug) {
             this.dbgTimeTxt.text = "time: " + (this.chartTime / 1000.0).toFixed(2);
             this.dbgRankTxt.text = "rank: " + this.dbgNoteRank;
@@ -149,9 +148,7 @@ class Example extends Phaser.Scene
         if (this.chartLoaded == false)
             return;
 
-        this.chartTime += 1000.0 / 60.0;
         const flyingTime = getFlyingTime(this.chartTime, this.chart);
-
         this.chart["notes"].forEach((note, noteIndex) => {
             if (!note.hasOwnProperty("added")) {
                 note["added"] = false;

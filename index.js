@@ -1,6 +1,7 @@
 // 
-const IsDebug = true;
-const DebugSongID = "d1";
+const IsDebug = true;      // NOTE: Remember to set this to false on release
+const EnableAudio = false; // NOTE: Remember to set this to true on release
+const DebugSongID = "d0";
 
 const SongStorageDirs = ["/default/song"];
 
@@ -84,11 +85,16 @@ class Example extends Phaser.Scene
        
         this.chartTime = 0.0;
         
-        for (let i = 0; i < 13; i++)
-        {
+        for (let i = 0; i < 13; i++) {
             const num = i.toString().padStart(2, "0");
             this.load.image(getNoteSprName(i, "BTN"), "/sprites/PSB" + num + ".png");
             this.load.image(getNoteSprName(i, "TGT"), "/sprites/PST" + num + ".png");
+        }
+
+        if (EnableAudio) {
+            this.load.audio("music", "/default/song/d1/music.mp3");
+            this.load.audio("commonNoteSE", "/sound/NoteSE_01.wav");
+            this.load.audio("arrowNoteSE", "/sound/NoteSE_02.wav");
         }
     }
 
@@ -101,41 +107,73 @@ class Example extends Phaser.Scene
         }
 
         this.initInput();
+        this.faceKeyMap  = ["tri", "circle", "cross", "square"];
+        this.arrowKeyMap = ["up", "right", "down", "left"];
 
         this.notesSpawned = []
         this.chartTimer = new HighResolutionTimer();
-        this.chartTimer.start();
+
+        this.gameStarted = false;
     }
 
     update()
     {
-        this.updateInput();
-        this.chartTime = this.chartTimer.getEllapsed();
-
-        if (this.chartLoaded) {
-            this.chart["notes"].every((note, noteIndex) => {
-                const windowStart = note["time"] - BadWindow;
-                const windowEnd = note["time"] + BadWindow;
-
-                // NOTE: This check makes multi-notes impossible to hit, as it will only allow
-                //       a single note to be checked each frame. That's fine for now, because
-                //       I only plan on adding F-style charts, but I should definitely seek
-                //       for a better way to do this.
-                //
-                // TODO: What can I do to improve this check?
-                if (this.chartTime >= windowStart && this.chartTime <= windowEnd && !note["dead"]) {
-                    this.processNoteHit(this.chart, note, noteIndex);
-
-                    // NOTE: Return false to break the loop after the first note
-                    //       matching the conditions is met
-                    return false;
-                }
-
-                return true;
-            });
+        // NOTE: Check if WebAudio context isn't unavailable
+        if (this.game.sound.locked) {
+            return;
         }
 
+        if (!this.chartLoaded) { return; }
+        else if (this.chartLoaded && !this.gameStarted) {
+            this.chartTimer.start();
+            this.gameStarted = true;
+        }
+
+        this.updateInput();
+        this.playNoteSE = "none";
+        this.chartTime = this.chartTimer.getEllapsed();
+
+        // NOTE: Check for inputs to see if note SE should be played
+        for (let i = 0; i < 4; i++) {
+            if (this.isKeyTapped(this.faceKeyMap[i]) || this.isKeyTapped(this.arrowKeyMap[i])) {
+                this.playNoteSE = "commonNoteSE";
+            }
+        }
+
+        if (EnableAudio) {
+            // NOTE: Play song after it's offset has been reached
+            if (this.chartTime >= this.chart["song_offset"] && !this.musicPlaying) {
+                this.sound.play("music");
+                this.musicPlaying = true;
+            }
+        }
+
+        this.chart["notes"].every((note, noteIndex) => {
+            const windowStart = note["time"] - BadWindow;
+            const windowEnd = note["time"] + BadWindow;
+
+            // NOTE: This check makes multi-notes impossible to hit, as it will only allow
+            //       a single note to be checked each frame. That's fine for now, because
+            //       I only plan on adding F-style charts, but I should definitely seek
+            //       for a better way to do this.
+            //
+            // TODO: What can I do to improve this check?
+            if (this.chartTime >= windowStart && this.chartTime <= windowEnd && !note["dead"]) {
+                this.processNoteHit(this.chart, note, noteIndex);
+
+                // NOTE: Return false to break the loop after the first note
+                //       matching the conditions is met
+                return false;
+            }
+
+            return true;
+        });
+
         this.updateNotes();
+
+        if (EnableAudio && this.playNoteSE != "none") {
+            this.sound.play(this.playNoteSE);
+        }
 
         if (IsDebug) {
             this.dbgTimeTxt.text = "time: " + (this.chartTime / 1000.0).toFixed(2);
@@ -230,9 +268,6 @@ class Example extends Phaser.Scene
 
     processNoteHit(chart, note, noteIndex)
     {
-        const faceKeyMap  = ["tri", "circle", "cross", "square"];
-        const arrowKeyMap = ["up", "right", "down", "left"];
-
         const noteType = note["type"];
         let noteWasHit = false;
 
@@ -242,8 +277,7 @@ class Example extends Phaser.Scene
         // 2 - Cross
         // 3 - Square
         if (noteType >= 0 && noteType < 4) {
-            if (this.isKeyTapped(faceKeyMap[noteType]) || this.isKeyTapped(arrowKeyMap[noteType])) {
-                console.log("oi!");
+            if (this.isKeyTapped(this.faceKeyMap[noteType]) || this.isKeyTapped(this.arrowKeyMap[noteType])) {
                 noteWasHit = true;
             }
         }
@@ -254,11 +288,11 @@ class Example extends Phaser.Scene
         // 7 - Left W
         else if (noteType >= 4 && noteType < 8) {
             const index = noteType - 4;
-            const wCond1 = this.isKeyTapped(faceKeyMap[index]) && this.isKeyDown(arrowKeyMap[index]);
-            const wCond2 = this.isKeyTapped(arrowKeyMap[index]) && this.isKeyDown(faceKeyMap[index]);
+            const wCond1 = this.isKeyTapped(this.faceKeyMap[index]) && this.isKeyDown(this.arrowKeyMap[index]);
+            const wCond2 = this.isKeyTapped(this.arrowKeyMap[index]) && this.isKeyDown(this.faceKeyMap[index]);
 
             if (wCond1 || wCond2) {
-                console.log("oi 2!");
+                this.playNoteSE = "arrowNoteSE";
                 noteWasHit = true;
             }
         }

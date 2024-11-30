@@ -1,7 +1,7 @@
 // 
 const IsDebug = true;      // NOTE: Remember to set this to false on release
 const EnableAudio = false; // NOTE: Remember to set this to true on release
-const DebugSongID = "d0";
+const DebugSongID = "d1";
 
 const SongStorageDirs = ["/default/song"];
 
@@ -68,7 +68,7 @@ function getNoteButtonPosition(time, flyingTime, note) {
     return [note["posX"] + notePosDelta.x, note["posY"] + notePosDelta.y]
 }
 
-class Example extends Phaser.Scene
+class GameScene extends Phaser.Scene
 {
     preload()
     {
@@ -107,8 +107,7 @@ class Example extends Phaser.Scene
         }
 
         this.initInput();
-        this.faceKeyMap  = ["tri", "circle", "cross", "square"];
-        this.arrowKeyMap = ["up", "right", "down", "left"];
+        
 
         this.notesSpawned = []
         this.chartTimer = new HighResolutionTimer();
@@ -135,7 +134,7 @@ class Example extends Phaser.Scene
 
         // NOTE: Check for inputs to see if note SE should be played
         for (let i = 0; i < 4; i++) {
-            if (this.isKeyTapped(this.faceKeyMap[i]) || this.isKeyTapped(this.arrowKeyMap[i])) {
+            if (this.divaInput.isKeyTapped(FaceKeyMap[i]) || this.divaInput.isKeyTapped(ArrowKeyMap[i])) {
                 this.playNoteSE = "commonNoteSE";
             }
         }
@@ -149,21 +148,31 @@ class Example extends Phaser.Scene
         }
 
         this.chart["notes"].every((note, noteIndex) => {
+            if (!note.hasOwnProperty("added")) {
+                note.added = false;
+                note.state = NS_NONE;
+                note.hitStatus = NJ_NONE;
+            }
+
             const windowStart = note["time"] - BadWindow;
             const windowEnd = note["time"] + BadWindow;
 
-            // NOTE: This check makes multi-notes impossible to hit, as it will only allow
-            //       a single note to be checked each frame. That's fine for now, because
-            //       I only plan on adding F-style charts, but I should definitely seek
-            //       for a better way to do this.
-            //
-            // TODO: What can I do to improve this check?
-            if (this.chartTime >= windowStart && this.chartTime <= windowEnd && !note["dead"]) {
-                this.processNoteHit(this.chart, note, noteIndex);
+            if (note.state == NS_NONE && this.chartTime >= windowStart && this.chartTime <= windowEnd) {
+                note.state = NS_POLLING;
+            }
+            
+            if (note.state == NS_POLLING || note.state == NS_HOLDING) {
+                processNoteHit(this, this.divaInput,this.chartTime, this.chart, note, noteIndex);
 
-                // NOTE: Return false to break the loop after the first note
-                //       matching the conditions is met
-                return false;
+                // TEMPORARY
+                if (note.hitStatus != NJ_NONE) {
+                    this.dbgNoteRank = note.hitStatus;
+                }
+                
+                // TEMPORARY
+                if (!isNoteLong(note.type)) {
+                    return false;
+                }
             }
 
             return true;
@@ -188,21 +197,13 @@ class Example extends Phaser.Scene
 
         const flyingTime = getFlyingTime(this.chartTime, this.chart);
         this.chart["notes"].forEach((note, noteIndex) => {
-            if (!note.hasOwnProperty("added")) {
-                note["added"] = false;
-            }
-
-            if (!note.hasOwnProperty("dead")) {
-                note["dead"] = false;
-            }
-
             const noteSpawnTime = note["time"] - flyingTime;
             const noteHitTime = note["time"];
             const noteDespawnBeginTime = noteHitTime + SafeWindow;
             const noteDespawnTime = noteDespawnBeginTime + NoteVanishLength;
             
             if (this.chartTime >= noteSpawnTime) {
-                if (!note["added"]) {
+                if (!note.added) {
                     let noteObject = {};
 
                     const targetScaledPos = getCanvasScaledNotePos(
@@ -230,11 +231,15 @@ class Example extends Phaser.Scene
                     noteObject["button"].depth = 100;
 
                     this.noteObjects.push(noteObject);
-                    note["added"] = true;
+                    note.added = true;
                 }
 
                 // NOTE: Update note button position
-                const buttonPos = getNoteButtonPosition(this.chartTime, flyingTime, note);
+                let buttonPos = getNoteButtonPosition(this.chartTime, flyingTime, note);
+                if (isNoteLong(note.type) && note.state == NS_HOLDING) {
+                    buttonPos = [note.posX, note.posY];
+                }
+                
                 const buttonScaledPos = getCanvasScaledNotePos(
                     buttonPos[0],
                     buttonPos[1],
@@ -248,87 +253,27 @@ class Example extends Phaser.Scene
                 );
 
                 // NOTE: Do the note's "shrinking" exit animation once it's past it's hit time
-                if (this.chartTime >= noteDespawnBeginTime && this.chartTime < noteDespawnTime) {
+                if (note.state == NS_VANISHING) {
                     const scale = 1.0 - (this.chartTime - noteDespawnBeginTime) / NoteVanishLength;
                     this.noteObjects[noteIndex]["target"].setDisplaySize(46 * scale, 46 * scale);
                     this.noteObjects[noteIndex]["button"].setDisplaySize(46 * scale, 46 * scale);
+
+                    if (scale <= 0.0) {
+                        note.state = NS_DEAD;
+                    }
                 }
 
-                //
-                //
-
-                if (this.chartTime >= noteDespawnTime && note["added"] && !note["dead"]) {
+                if (note.state == NS_DEAD) {
                     this.noteObjects[noteIndex]["target"].visible = false;
                     this.noteObjects[noteIndex]["button"].visible = false;
-                    note["dead"] = true;
                 }
             }
         });
     }
 
-    processNoteHit(chart, note, noteIndex)
-    {
-        const noteType = note["type"];
-        let noteWasHit = false;
-
-        // --- Normal notes ---
-        // 0 - Triangle
-        // 1 - Circle
-        // 2 - Cross
-        // 3 - Square
-        if (noteType >= 0 && noteType < 4) {
-            if (this.isKeyTapped(this.faceKeyMap[noteType]) || this.isKeyTapped(this.arrowKeyMap[noteType])) {
-                noteWasHit = true;
-            }
-        }
-        // --- Double notes ---
-        // 4 - Up W
-        // 5 - Right W
-        // 6 - Down W
-        // 7 - Left W
-        else if (noteType >= 4 && noteType < 8) {
-            const index = noteType - 4;
-            const wCond1 = this.isKeyTapped(this.faceKeyMap[index]) && this.isKeyDown(this.arrowKeyMap[index]);
-            const wCond2 = this.isKeyTapped(this.arrowKeyMap[index]) && this.isKeyDown(this.faceKeyMap[index]);
-
-            if (wCond1 || wCond2) {
-                this.playNoteSE = "arrowNoteSE";
-                noteWasHit = true;
-            }
-        }
-
-        if (noteWasHit) {
-            // NOTE: Evaluate note hit 
-            const noteHitTime = this.chartTime - note["time"];
-
-            if (noteHitTime <= CoolWindow && noteHitTime >= -CoolWindow) {
-                this.dbgNoteRank = "cool";
-            }
-            else if (noteHitTime <= FineWindow && noteHitTime >= -FineWindow) {
-                this.dbgNoteRank = "fine";
-            }
-            else if (noteHitTime <= SafeWindow && noteHitTime >= -SafeWindow) {
-                this.dbgNoteRank = "safe";
-            }
-            else if (noteHitTime <= BadWindow && noteHitTime >= -BadWindow) {
-                this.dbgNoteRank = "bad";
-            }
-
-            // NOTE: Hide visual note sprite
-            this.noteObjects[noteIndex]["target"].visible = false;
-            this.noteObjects[noteIndex]["button"].visible = false;
-            note["dead"] = true;
-        }
-    }
-
     // Phaser's input functions didn't have some stuff I needed (or maybe I just didn't look
     // far enough into the documentation), so I decided to make my own sort of "wrapper" around it.
     //
-    isKeyUp(k) { return !this.divaInput[k]["cur"]; }
-    isKeyDown(k) { return this.divaInput[k]["cur"]; }
-    isKeyTapped(k) { return this.divaInput[k]["cur"] && !this.divaInput[k]["prev"]; }
-    isKeyReleased(k) { return !this.divaInput[k]["cur"] && this.divaInput[k]["prev"]; }
-
     initInput()
     {
         this.divaInput = {};
@@ -350,6 +295,30 @@ class Example extends Phaser.Scene
         this.keyRight = this.input.keyboard.addKey("D");
         this.keyDown = this.input.keyboard.addKey("S");
         this.keyLeft = this.input.keyboard.addKey("A");
+
+        this.divaInput.isKeyUp = function(k) { return !this[k]["cur"]; }
+        this.divaInput.isKeyDown = function(k) { return this[k]["cur"]; }
+        this.divaInput.isKeyTapped = function(k) { return this[k]["cur"] && !this[k]["prev"]; }
+        this.divaInput.isKeyReleased = function(k) { return !this[k]["cur"] && this[k]["prev"]; }
+        this.divaInput.isAnyKeyTapped = function(...ks)
+        {
+            let cond = false;
+            for (const k of ks) {
+                cond |= this.isKeyTapped(k);
+            }
+    
+            return cond;
+        }
+
+        this.divaInput.isAnyKeyReleased = function(...ks)
+        {
+            let cond = false;
+            for (const k of ks) {
+                cond |= this.isKeyReleased(k);
+            }
+    
+            return cond;
+        }
     }
 
     updateInput()
@@ -384,13 +353,7 @@ const config = {
     type: Phaser.AUTO,
     width: 768,
     height: 432,
-    scene: Example,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 200 }
-        }
-    }
+    scene: GameScene
 };
 
 const game = new Phaser.Game(config);

@@ -1,0 +1,10 @@
+{
+    "name": "Debug Song 03",
+    "hideOnRelease": true,
+    "difficulty": [
+        {
+            "id": 1,
+            "rank": 0
+        }
+    ]
+}

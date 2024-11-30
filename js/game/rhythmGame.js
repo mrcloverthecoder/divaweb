@@ -18,10 +18,21 @@ const NJ_WORST = "worst";
 const FaceKeyMap  = ["tri", "circle", "cross", "square"];
 const ArrowKeyMap = ["up",  "right",  "down",  "left"];
 
+// GLOBAL GAME STATE
+let gameState = {
+    combo: 0,
+    maxCombo: 0
+}
+
 // HELPER FUNCTIONS
 function isNoteLong(type) { return type >= 8 && type < 12; }
 
 //
+function resetGameState() {
+    gameState.combo = 0;
+    gameState.maxCombo = 0;
+}
+
 function processNoteHit(scene, input, time, chart, note, noteIndex) {
     let noteWasHit = false;
 
@@ -94,19 +105,24 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
 
         if (noteHitTime <= CoolWindow && noteHitTime >= -CoolWindow) {
             note.hitStatus = NJ_COOL;
+            gameState.combo += 1;
         }
         else if (noteHitTime <= FineWindow && noteHitTime >= -FineWindow) {
             note.hitStatus = NJ_FINE;
+            gameState.combo += 1;
         }
         else if (noteHitTime <= SafeWindow && noteHitTime >= -SafeWindow) {
             note.hitStatus = NJ_SAFE;
+            gameState.combo += 1;
         }
         else if (noteHitTime <= BadWindow && noteHitTime >= -BadWindow) {
             note.hitStatus = NJ_BAD;
+            gameState.combo = 0;
         }
     }
 
     if (time >= note.time + BadWindow && note.hitStatus == NJ_NONE) {
+        gameState.combo = 0;
         note.hitStatus = NJ_WORST;
 
         if (isNoteLong(note.type)) {
@@ -126,5 +142,9 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
         else {
             note.state = NS_VANISHING;
         }
+    }
+
+    if (gameState.combo > gameState.maxCombo) {
+        gameState.maxCombo = gameState.combo;
     }
 }

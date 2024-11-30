@@ -104,6 +104,7 @@ class GameScene extends Phaser.Scene
             this.dbgTimeTxt = this.add.text(10, 10, "time: 0.0");
             this.dbgNoteRank = "none"
             this.dbgRankTxt = this.add.text(10, 30, "");
+            this.dbgComboTxt = this.add.text(10, 50, "combo: 0");
         }
 
         this.initInput();
@@ -187,6 +188,7 @@ class GameScene extends Phaser.Scene
         if (IsDebug) {
             this.dbgTimeTxt.text = "time: " + (this.chartTime / 1000.0).toFixed(2);
             this.dbgRankTxt.text = "rank: " + this.dbgNoteRank;
+            this.dbgComboTxt.text = "combo: " + gameState.combo + " / " + gameState.maxCombo;
         }
     }
 

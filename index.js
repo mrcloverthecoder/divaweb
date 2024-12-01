@@ -1,7 +1,7 @@
 // 
 const IsDebug = true;      // NOTE: Remember to set this to false on release
 const EnableAudio = false; // NOTE: Remember to set this to true on release
-const DebugSongID = "d1";
+const DebugSongID = "d2";
 
 const SongStorageDirs = ["/default/song"];
 
@@ -91,6 +91,12 @@ class GameScene extends Phaser.Scene
             this.load.image(getNoteSprName(i, "TGT"), "/sprites/PST" + num + ".png");
         }
 
+        this.load.image("Hand01", "/sprites/Hand01.png");
+        this.load.image("Hand04", "/sprites/Hand04.png");
+        this.load.image("Hand05", "/sprites/Hand05.png");
+        this.load.image("Hand06", "/sprites/Hand06.png");
+        this.load.image("Hand07", "/sprites/Hand07.png");
+
         if (EnableAudio) {
             this.load.audio("music", "/default/song/d1/music.mp3");
             this.load.audio("commonNoteSE", "/sound/NoteSE_01.wav");
@@ -108,7 +114,6 @@ class GameScene extends Phaser.Scene
         }
 
         this.initInput();
-        
 
         this.notesSpawned = []
         this.chartTimer = new HighResolutionTimer();
@@ -220,6 +225,15 @@ class GameScene extends Phaser.Scene
                         targetScaledPos[1],
                         getNoteSprName(note["type"], "TGT")
                     );
+
+                    noteObject.hand = this.add.image(
+                        targetScaledPos[0],
+                        targetScaledPos[1],
+                        isNoteDouble(note.type) ? getNoteSprName(note.type, "Hand") : "Hand01"
+                    );
+
+                    noteObject.hand.setDisplayOrigin(10, 47);
+                    noteObject.hand.setScale(0.75, 0.75);
                     
                     // NOTE: Position is updated further down
                     //       
@@ -230,16 +244,20 @@ class GameScene extends Phaser.Scene
 
                     // NOTE: Set Z index so that buttons always appear on top of targets
                     noteObject["target"].depth = 99;
+                    noteObject.hand.depth = 99;
                     noteObject["button"].depth = 100;
 
                     this.noteObjects.push(noteObject);
                     note.added = true;
                 }
 
+                let handRot = lerp2(0, 360, note.time - flyingTime, note.time, this.chartTime);
+
                 // NOTE: Update note button position
                 let buttonPos = getNoteButtonPosition(this.chartTime, flyingTime, note);
                 if (isNoteLong(note.type) && note.state == NS_HOLDING) {
                     buttonPos = [note.posX, note.posY];
+                    handRot = 0.0;
                 }
                 
                 const buttonScaledPos = getCanvasScaledNotePos(
@@ -254,11 +272,14 @@ class GameScene extends Phaser.Scene
                     buttonScaledPos[1]
                 );
 
+                this.noteObjects[noteIndex].hand.setRotation(degToRad(handRot));
+
                 // NOTE: Do the note's "shrinking" exit animation once it's past it's hit time
                 if (note.state == NS_VANISHING) {
                     const scale = 1.0 - (this.chartTime - noteDespawnBeginTime) / NoteVanishLength;
                     this.noteObjects[noteIndex]["target"].setDisplaySize(46 * scale, 46 * scale);
                     this.noteObjects[noteIndex]["button"].setDisplaySize(46 * scale, 46 * scale);
+                    this.noteObjects[noteIndex].hand.setScale(0.75 * scale, 0.75 * scale);
 
                     if (scale <= 0.0) {
                         note.state = NS_DEAD;
@@ -268,6 +289,7 @@ class GameScene extends Phaser.Scene
                 if (note.state == NS_DEAD) {
                     this.noteObjects[noteIndex]["target"].visible = false;
                     this.noteObjects[noteIndex]["button"].visible = false;
+                    this.noteObjects[noteIndex].hand.visible = false;
                 }
             }
         });

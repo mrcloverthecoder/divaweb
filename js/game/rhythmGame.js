@@ -14,6 +14,21 @@ const NJ_SAFE  = "safe";
 const NJ_BAD   = "bad";
 const NJ_WORST = "worst";
 
+// NOTE TYPES
+const NT_TRIANGLE = 0;
+const NT_CIRCLE   = 1;
+const NT_CROSS    = 2;
+const NT_SQUARE   = 3;
+const NT_TRIANGLE_W = 4;
+const NT_CIRCLE_W   = 5;
+const NT_CROSS_W    = 6;
+const NT_SQUARE_W   = 7;
+const NT_TRIANGLE_LONG = 8;
+const NT_CIRCLE_LONG   = 9;
+const NT_CROSS_LONG    = 10;
+const NT_SQUARE_LONG   = 11;
+const NT_STAR          = 12;
+
 // INPUT 
 const FaceKeyMap  = ["tri", "circle", "cross", "square"];
 const ArrowKeyMap = ["up",  "right",  "down",  "left"];
@@ -25,7 +40,8 @@ let gameState = {
 }
 
 // HELPER FUNCTIONS
-function isNoteLong(type) { return type >= 8 && type < 12; }
+function isNoteLong(type) { return type >= NT_TRIANGLE_LONG && type <= NT_SQUARE_LONG; }
+function isNoteDouble(type) { return type >= NT_TRIANGLE_W && type <= NT_SQUARE_W; }
 
 //
 function resetGameState() {

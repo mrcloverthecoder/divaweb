@@ -246,6 +246,7 @@ class GameScene extends Phaser.Scene
                     // NOTE: Set Z index so that buttons always appear on top of targets
                     noteObject.target.depth = 100;
                     noteObject.hand.depth   = 100;
+                    noteObject.kiseki.depth = 101;
                     noteObject.button.depth = 105;
 
                     this.noteObjects.push(noteObject);

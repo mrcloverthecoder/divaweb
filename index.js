@@ -39,33 +39,10 @@ function getFlyingTime(time, chart) {
     chart["tempo"].forEach((tempo) => {
         if (time >= tempo["time"]) {
             barLength = tempo["flyingTime"];
-            // barLength = 60.0 / tempo["bpm"] * tempo["signature"] * 1000.0;
-            // barLength *= tempo["factor"];
         }
     });
     
     return barLength;
-}
-
-function getNoteButtonPosition(time, flyingTime, note) {
-    const targetAppearTime = note["time"] - flyingTime;
-    const timeProgress = (time - targetAppearTime) / flyingTime;
-    const invTimeProgress = 1.0 - timeProgress; // NOTE: Distance delta to hit time
-
-    // NOTE: Convert degrees to radians
-    const noteAngle = note["angle"] * (Math.PI / 180.0);
-
-    const notePosDelta = new Phaser.Math.Vector2(
-        // PS:   Thanks EIRexe from EIRteam for this math.
-        Math.sin(invTimeProgress * Math.PI * note["frequency"]) / 12.0 * note["amplitude"],
-        // NOTE: Invert distance so that (hit position + delta y) comes from *top* and not
-        //       from the bottom. This was originally a little different in EIRexe's code,
-        //       I think he managed to get the same result but with slightly different approach.
-        //       With how he did it, DIVA angles would look off (by about 90 degrees, I think).
-        invTimeProgress * -note["distance"]
-    ).rotate(noteAngle);
-
-    return [note["posX"] + notePosDelta.x, note["posY"] + notePosDelta.y]
 }
 
 class GameScene extends Phaser.Scene
@@ -96,6 +73,7 @@ class GameScene extends Phaser.Scene
         this.load.image("Hand05", "/sprites/Hand05.png");
         this.load.image("Hand06", "/sprites/Hand06.png");
         this.load.image("Hand07", "/sprites/Hand07.png");
+        this.load.image("Kiseki01", "/sprites/Kiseki01.png");
 
         if (EnableAudio) {
             this.load.audio("music", "/default/song/d1/music.mp3");
@@ -119,10 +97,20 @@ class GameScene extends Phaser.Scene
         this.chartTimer = new HighResolutionTimer();
 
         this.gameStarted = false;
+        
+        if (IsDebug) {
+            this.meshDebug = this.add.graphics();
+            
+        }
     }
 
     update()
     {
+        if (IsDebug) {
+            this.meshDebug.clear();
+            this.meshDebug.lineStyle(1, 0x00ff00);
+        }
+
         // NOTE: Check if WebAudio context isn't unavailable
         if (this.game.sound.locked) {
             return;
@@ -234,6 +222,19 @@ class GameScene extends Phaser.Scene
 
                     noteObject.hand.setDisplayOrigin(10, 47);
                     noteObject.hand.setScale(0.75, 0.75);
+
+                    // NOTE: Create the note's kiseki mesh
+                    //
+                    noteObject.kiseki = this.add.mesh(
+                        768 / 2,
+                        432 / 2,
+                        "Kiseki01"
+                    );
+
+                    if (IsDebug) { noteObject.kiseki.setDebug(this.meshDebug); }
+                    // NOTE: Required so that the mesh faces are updated every frame
+                    noteObject.kiseki.ignoreDirtyCache = true;
+                    noteObject.kiseki.hideCCW = false;
                     
                     // NOTE: Position is updated further down
                     //       
@@ -243,12 +244,35 @@ class GameScene extends Phaser.Scene
                     noteObject["button"].setDisplaySize(46, 46);
 
                     // NOTE: Set Z index so that buttons always appear on top of targets
-                    noteObject["target"].depth = 99;
-                    noteObject.hand.depth = 99;
-                    noteObject["button"].depth = 100;
+                    noteObject.target.depth = 100;
+                    noteObject.hand.depth   = 100;
+                    noteObject.button.depth = 105;
 
                     this.noteObjects.push(noteObject);
                     note.added = true;
+                }
+
+                // NOTE: Update kiseki mesh
+                //
+                if (this.noteObjects[noteIndex].kiseki != null) {
+                    if (!isNoteLong(note.type) || (isNoteLong(note.type) && !note.isRelease)) {
+                        const kisekiMeshData = calculateKiseki(note, flyingTime, this.chartTime);
+                        this.noteObjects[noteIndex].kiseki.clear().addVertices(
+                            kisekiMeshData.vertices,
+                            kisekiMeshData.uvs,
+                            kisekiMeshData.indices,
+                            false, // Has Z
+                            null,  // Normals
+                            kisekiMeshData.colors,
+                            kisekiMeshData.alphas
+                        );
+
+                        // NOTE: The update function must be called manually when updating the mesh's
+                        //       content every frame.
+                        this.noteObjects[noteIndex].kiseki.preUpdate();
+                        this.noteObjects[noteIndex].kiseki.hideCCW = false;
+                        this.noteObjects[noteIndex].kiseki.setOrtho(768, 432);
+                    }
                 }
 
                 let handRot = lerp2(0, 360, note.time - flyingTime, note.time, this.chartTime);
@@ -290,6 +314,11 @@ class GameScene extends Phaser.Scene
                     this.noteObjects[noteIndex]["target"].visible = false;
                     this.noteObjects[noteIndex]["button"].visible = false;
                     this.noteObjects[noteIndex].hand.visible = false;
+
+                    if (this.noteObjects[noteIndex].kiseki != null) {
+                        this.noteObjects[noteIndex].kiseki.destroy();
+                        this.noteObjects[noteIndex].kiseki = null;
+                    }
                 }
             }
         });

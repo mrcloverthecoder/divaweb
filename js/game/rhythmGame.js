@@ -28,6 +28,8 @@ const NT_CIRCLE_LONG   = 9;
 const NT_CROSS_LONG    = 10;
 const NT_SQUARE_LONG   = 11;
 const NT_STAR          = 12;
+const NT_STAR_LONG     = 13;
+const NT_STAR_W        = 14;
 
 // INPUT 
 const FaceKeyMap  = ["tri", "circle", "cross", "square"];
@@ -42,6 +44,27 @@ let gameState = {
 // HELPER FUNCTIONS
 function isNoteLong(type) { return type >= NT_TRIANGLE_LONG && type <= NT_SQUARE_LONG; }
 function isNoteDouble(type) { return type >= NT_TRIANGLE_W && type <= NT_SQUARE_W; }
+
+function getNoteButtonPosition(time, flyingTime, note, offsetX = 0.0, offsetY = 0.0) {
+    const targetAppearTime = note["time"] - flyingTime;
+    const timeProgress = (time - targetAppearTime) / flyingTime;
+    const invTimeProgress = 1.0 - timeProgress; // NOTE: Distance delta to hit time
+
+    // NOTE: Convert degrees to radians
+    const noteAngle = note["angle"] * (Math.PI / 180.0);
+
+    let notePosDelta = new Phaser.Math.Vector2(
+        // PS:   Thanks EIRexe from EIRteam for this math.
+        Math.sin(invTimeProgress * Math.PI * note["frequency"]) / 12.0 * note["amplitude"] + offsetX,
+        // NOTE: Invert distance so that (hit position + delta y) comes from *top* and not
+        //       from the bottom. This was originally a little different in EIRexe's code,
+        //       I think he managed to get the same result but with slightly different approach.
+        //       With how he did it, DIVA angles would look off (by about 90 degrees, I think).
+        invTimeProgress * -note["distance"] + offsetY
+    ).rotate(noteAngle);
+
+    return [note["posX"] + notePosDelta.x, note["posY"] + notePosDelta.y];
+}
 
 //
 function resetGameState() {

@@ -375,6 +375,10 @@ class GameScene extends Phaser.Scene
                         note.state = NS_DEAD;
                     }
                 }
+                else if (note.state == NS_HOLDING) {
+                    noteObj.button.visible = false;
+                    noteObj.kiseki.depth = 99;
+                }
 
                 if (note.state == NS_DEAD) {
                     noteObj.target.visible = false;

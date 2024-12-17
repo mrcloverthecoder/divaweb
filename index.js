@@ -24,9 +24,9 @@ const NoteVanishLength = 133;
 
 const SpriteScale = {
     sourceRes: [1280, 728],
-    handScale: [1.2, 1.2],
-    defaultTargetScale: [1.1, 1.1],
-    defaultButtonScale: [1.1, 1.1],
+    handScale: [1.23, 1.23],
+    defaultTargetScale: [1.13, 1.13],
+    defaultButtonScale: [1.13, 1.13],
 
     notes: [
         

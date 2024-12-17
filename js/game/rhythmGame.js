@@ -131,9 +131,15 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
             }
             else {
                 if (!input.isKeyDown(note.hitWith)) {
-                    note.state = NS_DEAD;
-                    chart.notes[noteIndex + 1].state = NS_DEAD;
-                    chart.notes[noteIndex + 1].hitStatus = "worst";
+                    // NOTE: Check if we're outside of the end note's timing window
+                    let nextNote = chart.notes[noteIndex + 1];
+                    const nextNoteTime = time - nextNote.time;
+
+                    if (nextNoteTime >= BadWindow && nextNoteTime <= -BadWindow) {
+                        note.state = NS_DEAD;
+                        chart.notes[noteIndex + 1].state = NS_DEAD;
+                        chart.notes[noteIndex + 1].hitStatus = "worst";
+                    }
                 }
             }
         }

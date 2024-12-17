@@ -27,10 +27,11 @@ const SpriteScale = {
     handScale: [1.23, 1.23],
     defaultTargetScale: [1.13, 1.13],
     defaultButtonScale: [1.13, 1.13],
+    targetAppearScale: [1.23, 1.23],
 
-    notes: [
-        
-    ]
+    notes: {
+
+    }
 }
 
 // NOTE: Phaser helper functions
@@ -294,6 +295,11 @@ class GameScene extends Phaser.Scene
                     noteObject.kiseki.depth = 101;
                     noteObject.button.depth = 105;
 
+                    // NOTE: Keep base scale for reference
+                    noteObject.tgtBaseScale = [noteObject.target.scaleX, noteObject.target.scaleY];
+                    noteObject.butBaseScale = [noteObject.button.scaleX, noteObject.button.scaleY];
+                    noteObject.handBaseScale = [noteObject.hand.scaleX, noteObject.hand.scaleY];
+
                     this.noteObjects.push(noteObject);
                     note.added = true;
                 }
@@ -339,6 +345,22 @@ class GameScene extends Phaser.Scene
                     this.gameHeight
                 );
 
+                if (this.chartTime - noteSpawnTime < 200) {
+                    noteObj.target.setScale(
+                        noteObj.tgtBaseScale[0] * SpriteScale.targetAppearScale[0],
+                        noteObj.tgtBaseScale[1] * SpriteScale.targetAppearScale[1]
+                    );
+
+                    noteObj.hand.setScale(
+                        noteObj.handBaseScale[0] * SpriteScale.targetAppearScale[0],
+                        noteObj.handBaseScale[1] * SpriteScale.targetAppearScale[1]
+                    );
+                }
+                else {
+                    noteObj.target.setScale(noteObj.tgtBaseScale[0], noteObj.tgtBaseScale[1]);
+                    noteObj.hand.setScale(noteObj.handBaseScale[0], noteObj.handBaseScale[1]);
+                }
+
                 noteObj.button.setPosition(
                     buttonScaledPos[0],
                     buttonScaledPos[1]
@@ -349,12 +371,6 @@ class GameScene extends Phaser.Scene
                 // NOTE: Do the note's "shrinking" exit animation once it's past it's hit time
                 if (note.state == NS_VANISHING) {
                     const scale = 1.0 - (this.chartTime - noteDespawnBeginTime) / NoteVanishLength;
-
-                    if (!noteObj.hasOwnProperty("tgtBaseScale")) {
-                        noteObj.tgtBaseScale = [noteObj.target.scaleX, noteObj.target.scaleY];
-                        noteObj.butBaseScale = [noteObj.button.scaleX, noteObj.button.scaleY];
-                        noteObj.handBaseScale = [noteObj.hand.scaleX, noteObj.hand.scaleY];
-                    }
 
                     noteObj.button.setScale(
                         noteObj.butBaseScale[0] * scale,

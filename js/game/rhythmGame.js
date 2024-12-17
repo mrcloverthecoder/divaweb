@@ -111,7 +111,7 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
         const index = note.type - 8;
 
         if (note.isRelease) {
-            if (input.isAnyKeyReleased(FaceKeyMap[index], ArrowKeyMap[index])) {
+            if (input.isKeyReleased(chart.notes[noteIndex - 1].hitWith)) {
                 noteWasHit = true;
                 note.state = NS_DEAD;
 
@@ -125,11 +125,12 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
             if (note.state != NS_HOLDING) {
                 if (input.isAnyKeyTapped(FaceKeyMap[index], ArrowKeyMap[index])) {
                     note.state = NS_HOLDING;
+                    note.hitWith = input.isKeyTapped(FaceKeyMap[index]) ? FaceKeyMap[index] : ArrowKeyMap[index];
                     noteWasHit = true;
                 }
             }
             else {
-                if (!input.isKeyDown(FaceKeyMap[index])) {
+                if (!input.isKeyDown(note.hitWith)) {
                     note.state = NS_DEAD;
                     chart.notes[noteIndex + 1].state = NS_DEAD;
                     chart.notes[noteIndex + 1].hitStatus = "worst";

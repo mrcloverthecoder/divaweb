@@ -220,21 +220,20 @@ class GameScene extends Phaser.Scene
         ];
 
         const flyingTime = getFlyingTime(this.chartTime, this.chart);
-        this.chart["notes"].forEach((note, noteIndex) => {
+        this.chart.notes.forEach((note, noteIndex) => {
             const noteSpawnTime = note["time"] - flyingTime;
             const noteHitTime = note["time"];
             const noteDespawnBeginTime = noteHitTime + SafeWindow;
-            const noteDespawnTime = noteDespawnBeginTime + NoteVanishLength;
             
             if (this.chartTime >= noteSpawnTime) {
                 if (!note.added) {
                     let noteObject = {};
 
                     const targetScaledPos = getCanvasScaledNotePos(
-                        note["posX"],
-                        note["posY"],
-                        this.sys.game.scale.gameSize["width"],
-                        this.sys.game.scale.gameSize["height"]
+                        note.posX,
+                        note.posY,
+                        this.gameWidth,
+                        this.gameHeight
                     );
 
                     const buttonSprScale = SpriteScale.notes.hasOwnProperty(note.type) ? SpriteScale.notes[note.type].buttonBaseScale : SpriteScale.defaultButtonScale; 
@@ -299,12 +298,14 @@ class GameScene extends Phaser.Scene
                     note.added = true;
                 }
 
+                let noteObj = this.noteObjects[noteIndex];
+
                 // NOTE: Update kiseki mesh
                 //
-                if (this.noteObjects[noteIndex].kiseki != null) {
+                if (noteObj.kiseki != null) {
                     if (!isNoteLong(note.type) || (isNoteLong(note.type) && !note.isRelease)) {
                         const kisekiMeshData = calculateKiseki(note, flyingTime, this.chartTime);
-                        this.noteObjects[noteIndex].kiseki.clear().addVertices(
+                        noteObj.kiseki.clear().addVertices(
                             kisekiMeshData.vertices,
                             kisekiMeshData.uvs,
                             kisekiMeshData.indices,
@@ -316,9 +317,9 @@ class GameScene extends Phaser.Scene
 
                         // NOTE: The update function must be called manually when updating the mesh's
                         //       content every frame.
-                        this.noteObjects[noteIndex].kiseki.preUpdate();
-                        this.noteObjects[noteIndex].kiseki.hideCCW = false;
-                        this.noteObjects[noteIndex].kiseki.setOrtho(768, 432);
+                        noteObj.kiseki.preUpdate();
+                        noteObj.kiseki.hideCCW = false;
+                        noteObj.kiseki.setOrtho(768, 432);
                     }
                 }
 
@@ -334,21 +335,20 @@ class GameScene extends Phaser.Scene
                 const buttonScaledPos = getCanvasScaledNotePos(
                     buttonPos[0],
                     buttonPos[1],
-                    this.sys.game.scale.gameSize["width"],
-                    this.sys.game.scale.gameSize["height"]
+                    this.gameWidth,
+                    this.gameHeight
                 );
 
-                this.noteObjects[noteIndex]["button"].setPosition(
+                noteObj.button.setPosition(
                     buttonScaledPos[0],
                     buttonScaledPos[1]
                 );
 
-                this.noteObjects[noteIndex].hand.setRotation(degToRad(handRot));
+                noteObj.hand.setRotation(degToRad(handRot));
 
                 // NOTE: Do the note's "shrinking" exit animation once it's past it's hit time
                 if (note.state == NS_VANISHING) {
                     const scale = 1.0 - (this.chartTime - noteDespawnBeginTime) / NoteVanishLength;
-                    let noteObj = this.noteObjects[noteIndex];
 
                     if (!noteObj.hasOwnProperty("tgtBaseScale")) {
                         noteObj.tgtBaseScale = [noteObj.target.scaleX, noteObj.target.scaleY];
@@ -377,13 +377,13 @@ class GameScene extends Phaser.Scene
                 }
 
                 if (note.state == NS_DEAD) {
-                    this.noteObjects[noteIndex]["target"].visible = false;
-                    this.noteObjects[noteIndex]["button"].visible = false;
-                    this.noteObjects[noteIndex].hand.visible = false;
+                    noteObj.target.visible = false;
+                    noteObj.button.visible = false;
+                    noteObj.hand.visible = false;
 
-                    if (this.noteObjects[noteIndex].kiseki != null) {
-                        this.noteObjects[noteIndex].kiseki.destroy();
-                        this.noteObjects[noteIndex].kiseki = null;
+                    if (noteObj.kiseki != null) {
+                        noteObj.kiseki.destroy();
+                        noteObj.kiseki = null;
                     }
                 }
             }

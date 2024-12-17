@@ -1,7 +1,7 @@
 // 
 const IsDebug = true;      // NOTE: Remember to set this to false on release
-const EnableAudio = false; // NOTE: Remember to set this to true on release
-const DebugSongID = "d2";
+const EnableAudio = true; // NOTE: Remember to set this to true on release
+const DebugSongID = "r000";
 
 const SongStorageDirs = ["/default/song"];
 
@@ -76,8 +76,9 @@ class GameScene extends Phaser.Scene
         this.load.image("Kiseki01", "/sprites/Kiseki01.png");
 
         if (EnableAudio) {
-            this.load.audio("music", "/default/song/d1/music.mp3");
+            this.load.audio("music", "/default/song/" + DebugSongID + "/music.mp3");
             this.load.audio("commonNoteSE", "/sound/NoteSE_01.wav");
+            this.load.audio("starNoteSE", "/sound/NoteSE_01.wav");
             this.load.audio("arrowNoteSE", "/sound/NoteSE_02.wav");
         }
     }
@@ -123,13 +124,17 @@ class GameScene extends Phaser.Scene
         }
 
         this.updateInput();
-        this.playNoteSE = "none";
+        gameState.frame.noteSE = "none";
         this.chartTime = this.chartTimer.getEllapsed();
 
         // NOTE: Check for inputs to see if note SE should be played
         for (let i = 0; i < 4; i++) {
             if (this.divaInput.isKeyTapped(FaceKeyMap[i]) || this.divaInput.isKeyTapped(ArrowKeyMap[i])) {
-                this.playNoteSE = "commonNoteSE";
+                gameState.frame.noteSE = "commonNoteSE";
+            }
+
+            if (this.divaInput.isAnyKeyTapped("starL", "starR")) {
+                gameState.frame.noteSE = "starNoteSE";
             }
         }
 
@@ -174,8 +179,8 @@ class GameScene extends Phaser.Scene
 
         this.updateNotes();
 
-        if (EnableAudio && this.playNoteSE != "none") {
-            this.sound.play(this.playNoteSE);
+        if (EnableAudio && gameState.frame.noteSE != "none") {
+            this.sound.play(gameState.frame.noteSE);
         }
 
         if (IsDebug) {
@@ -339,7 +344,9 @@ class GameScene extends Phaser.Scene
         this.divaInput["right"] = { "prev": false, "cur": false };
         this.divaInput["down"] = { "prev": false, "cur": false };
         this.divaInput["left"] = { "prev": false, "cur": false };
-
+        this.divaInput["starL"] = { "prev": false, "cur": false };
+        this.divaInput["starR"] = { "prev": false, "cur": false };
+ 
         this.keyTriangle = this.input.keyboard.addKey("I");
         this.keyCircle = this.input.keyboard.addKey("L");
         this.keyCross = this.input.keyboard.addKey("K");
@@ -349,6 +356,11 @@ class GameScene extends Phaser.Scene
         this.keyRight = this.input.keyboard.addKey("D");
         this.keyDown = this.input.keyboard.addKey("S");
         this.keyLeft = this.input.keyboard.addKey("A");
+
+        this.keyStarL1 = this.input.keyboard.addKey("Q");
+        this.keyStarL2 = this.input.keyboard.addKey("U");
+        this.keyStarR1 = this.input.keyboard.addKey("E");
+        this.keyStarR2 = this.input.keyboard.addKey("O");
 
         this.divaInput.isKeyUp = function(k) { return !this[k]["cur"]; }
         this.divaInput.isKeyDown = function(k) { return this[k]["cur"]; }
@@ -400,6 +412,12 @@ class GameScene extends Phaser.Scene
 
         this.divaInput["left"]["prev"] = this.divaInput["left"]["cur"];
         this.divaInput["left"]["cur"]  = this.keyLeft.isDown;
+
+        this.divaInput["starL"]["prev"] = this.divaInput["starL"]["cur"];
+        this.divaInput["starL"]["cur"]  = this.keyStarL1.isDown;
+
+        this.divaInput["starR"]["prev"] = this.divaInput["starR"]["cur"];
+        this.divaInput["starR"]["cur"]  = this.keyStarR2.isDown;
     }
 }
 

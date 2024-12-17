@@ -38,7 +38,10 @@ const ArrowKeyMap = ["up",  "right",  "down",  "left"];
 // GLOBAL GAME STATE
 let gameState = {
     combo: 0,
-    maxCombo: 0
+    maxCombo: 0,
+    frame: {
+        noteSE: "none"
+    }
 }
 
 // HELPER FUNCTIONS
@@ -97,7 +100,7 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
         const wCond2 = input.isKeyTapped(ArrowKeyMap[index]) && input.isKeyDown(FaceKeyMap[index]);
 
         if (wCond1 || wCond2) {
-            // this.playNoteSE = "arrowNoteSE";
+            gameState.frame.noteSE = "arrowNoteSE";
             noteWasHit = true;
             note.state = NS_DEAD;
         }
@@ -114,6 +117,7 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
             if (input.isKeyReleased(chart.notes[noteIndex - 1].hitWith)) {
                 noteWasHit = true;
                 note.state = NS_DEAD;
+                gameState.frame.noteSE = "commonNoteSE";
 
                 // NOTE: This means there cannot be any notes in between long notes.
                 // TODO: *Even though it's not recommended to do this*, I think it
@@ -142,6 +146,12 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
                     }
                 }
             }
+        }
+    }
+    else if (note.type == 12) {
+        if (input.isAnyKeyTapped("starL", "starR")) {
+            noteWasHit = true;
+            note.state = NS_DEAD;
         }
     }
 

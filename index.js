@@ -17,6 +17,22 @@ const SafeWindow = 100;
 const BadWindow  = 130;
 const NoteVanishLength = 133;
 
+//
+//
+//
+//
+
+const SpriteScale = {
+    sourceRes: [1280, 728],
+    handScale: [1.2, 1.2],
+    defaultTargetScale: [1.1, 1.1],
+    defaultButtonScale: [1.1, 1.1],
+
+    notes: [
+        
+    ]
+}
+
 // NOTE: Phaser helper functions
 function getNoteSprName(noteType, sprType) {
     return sprType + noteType.toString().padStart(2, "0");
@@ -107,6 +123,9 @@ class GameScene extends Phaser.Scene
 
     update()
     {
+        this.gameWidth  = this.sys.game.scale.gameSize.width;
+        this.gameHeight = this.sys.game.scale.gameSize.height;
+
         if (IsDebug) {
             this.meshDebug.clear();
             this.meshDebug.lineStyle(1, 0x00ff00);
@@ -195,6 +214,11 @@ class GameScene extends Phaser.Scene
         if (this.chartLoaded == false)
             return;
 
+        const sprResScale = [
+            this.gameWidth / SpriteScale.sourceRes[0],
+            this.gameHeight / SpriteScale.sourceRes[1]
+        ];
+
         const flyingTime = getFlyingTime(this.chartTime, this.chart);
         this.chart["notes"].forEach((note, noteIndex) => {
             const noteSpawnTime = note["time"] - flyingTime;
@@ -213,40 +237,57 @@ class GameScene extends Phaser.Scene
                         this.sys.game.scale.gameSize["height"]
                     );
 
-                    noteObject["target"] = this.add.image(
+                    const buttonSprScale = SpriteScale.notes.hasOwnProperty(note.type) ? SpriteScale.notes[note.type].buttonBaseScale : SpriteScale.defaultButtonScale; 
+                    const targetSprScale = SpriteScale.notes.hasOwnProperty(note.type) ? SpriteScale.notes[note.type].targetBaseScale : SpriteScale.defaultTargetScale;
+
+                    // NOTE: The button's position is updated further down
+                    //       
+                    noteObject.button = this.add.image(0.0, 0.0, getNoteSprName(note["type"], "BTN"));
+                    noteObject.button.setScale(
+                        sprResScale[0] * buttonSprScale[0],
+                        sprResScale[1] * buttonSprScale[1]
+                    )
+
+                    //
+                    //
+                    noteObject.target = this.add.image(
                         targetScaledPos[0],
                         targetScaledPos[1],
                         getNoteSprName(note["type"], "TGT")
                     );
 
+                    noteObject.target.setScale(
+                        sprResScale[0] * targetSprScale[0],
+                        sprResScale[1] * targetSprScale[1]
+                    )
+
+                    //
+                    //
                     noteObject.hand = this.add.image(
                         targetScaledPos[0],
                         targetScaledPos[1],
                         isNoteDouble(note.type) ? getNoteSprName(note.type, "Hand") : "Hand01"
                     );
-
+                    
                     noteObject.hand.setDisplayOrigin(10, 47);
-                    noteObject.hand.setScale(0.75, 0.75);
+                    noteObject.hand.setScale(
+                        sprResScale[0] * SpriteScale.handScale[0],
+                        sprResScale[1] * SpriteScale.handScale[1]
+                    );
 
                     // NOTE: Create the note's kiseki mesh
                     //
                     noteObject.kiseki = this.add.mesh(
-                        768 / 2,
-                        432 / 2,
+                        this.gameWidth / 2,
+                        this.gameHeight / 2,
                         "Kiseki01"
                     );
 
                     if (IsDebug) { noteObject.kiseki.setDebug(this.meshDebug); }
                     // NOTE: Required so that the mesh faces are updated every frame
                     noteObject.kiseki.ignoreDirtyCache = true;
+                    // NOTE: Won't draw faces correctly if it's true
                     noteObject.kiseki.hideCCW = false;
-                    
-                    // NOTE: Position is updated further down
-                    //       
-                    noteObject["button"] = this.add.image(0.0, 0.0, getNoteSprName(note["type"], "BTN"));
-
-                    noteObject["target"].setDisplaySize(46, 46);
-                    noteObject["button"].setDisplaySize(46, 46);
 
                     // NOTE: Set Z index so that buttons always appear on top of targets
                     noteObject.target.depth = 100;
@@ -307,9 +348,28 @@ class GameScene extends Phaser.Scene
                 // NOTE: Do the note's "shrinking" exit animation once it's past it's hit time
                 if (note.state == NS_VANISHING) {
                     const scale = 1.0 - (this.chartTime - noteDespawnBeginTime) / NoteVanishLength;
-                    this.noteObjects[noteIndex]["target"].setDisplaySize(46 * scale, 46 * scale);
-                    this.noteObjects[noteIndex]["button"].setDisplaySize(46 * scale, 46 * scale);
-                    this.noteObjects[noteIndex].hand.setScale(0.75 * scale, 0.75 * scale);
+                    let noteObj = this.noteObjects[noteIndex];
+
+                    if (!noteObj.hasOwnProperty("tgtBaseScale")) {
+                        noteObj.tgtBaseScale = [noteObj.target.scaleX, noteObj.target.scaleY];
+                        noteObj.butBaseScale = [noteObj.button.scaleX, noteObj.button.scaleY];
+                        noteObj.handBaseScale = [noteObj.hand.scaleX, noteObj.hand.scaleY];
+                    }
+
+                    noteObj.button.setScale(
+                        noteObj.butBaseScale[0] * scale,
+                        noteObj.butBaseScale[1] * scale
+                    );
+
+                    noteObj.target.setScale(
+                        noteObj.tgtBaseScale[0] * scale,
+                        noteObj.tgtBaseScale[1] * scale
+                    );
+
+                    noteObj.hand.setScale(
+                        noteObj.handBaseScale[0] * scale,
+                        noteObj.handBaseScale[1] * scale
+                    );
 
                     if (scale <= 0.0) {
                         note.state = NS_DEAD;

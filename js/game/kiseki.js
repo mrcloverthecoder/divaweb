@@ -94,7 +94,7 @@ function calculateKiseki(note, flyingTime, time) {
         // TODO: Add logic for setting the chance time kiseki
     }
     else if (isNoteLong(note.type)) {
-        width = 64;
+        width = 56;
         startV = 64 + 32 * (note.type - NT_TRIANGLE_LONG);
         endV = startV + 32;
 

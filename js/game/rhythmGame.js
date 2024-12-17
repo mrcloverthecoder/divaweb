@@ -139,10 +139,10 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
                     let nextNote = chart.notes[noteIndex + 1];
                     const nextNoteTime = time - nextNote.time;
 
-                    if (nextNoteTime >= BadWindow && nextNoteTime <= -BadWindow) {
+                    if (nextNoteTime > BadWindow || nextNoteTime < -BadWindow) {
                         note.state = NS_DEAD;
                         chart.notes[noteIndex + 1].state = NS_DEAD;
-                        chart.notes[noteIndex + 1].hitStatus = "worst";
+                        chart.notes[noteIndex + 1].hitStatus = NJ_WORST;
                     }
                 }
             }

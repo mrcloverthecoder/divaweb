@@ -330,12 +330,12 @@ class GameScene extends Phaser.Scene
                 }
 
                 let handRot = lerp2(0, 360, note.time - flyingTime, note.time, this.chartTime);
+                if (handRot > 360) { handRot = 360; }
 
                 // NOTE: Update note button position
                 let buttonPos = getNoteButtonPosition(this.chartTime, flyingTime, note);
                 if (isNoteLong(note.type) && note.state == NS_HOLDING) {
                     buttonPos = [note.posX, note.posY];
-                    handRot = 0.0;
                 }
                 
                 const buttonScaledPos = getCanvasScaledNotePos(

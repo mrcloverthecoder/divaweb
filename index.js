@@ -120,8 +120,8 @@ class GameScene extends Phaser.Scene
         if (EnableAudio) {
             this.load.audio("music", "/default/song/" + DebugSongID + "/music.mp3");
             this.load.audio("commonNoteSE", "/sound/NoteSE_01.wav");
-            this.load.audio("starNoteSE", "/sound/NoteSE_01.wav");
             this.load.audio("arrowNoteSE", "/sound/NoteSE_02.wav");
+            this.load.audio("starNoteSE", "/sound/NoteSE_03.wav");
         }
     }
 
@@ -140,10 +140,15 @@ class GameScene extends Phaser.Scene
         this.chartTimer = new HighResolutionTimer();
 
         this.gameStarted = false;
+
+        if (EnableAudio) {
+            this.buttonSE = this.sound.add("commonNoteSE");
+            this.doubleSE = this.sound.add("arrowNoteSE");
+            this.touchSE  = this.sound.add("starNoteSE");
+        }
         
         if (IsDebug) {
             this.meshDebug = this.add.graphics();
-            
         }
     }
 
@@ -169,17 +174,17 @@ class GameScene extends Phaser.Scene
         }
 
         this.updateInput();
-        gameState.frame.noteSE = "none";
+        gameState.frame.noteSE = SE_NONE;
         this.chartTime = this.chartTimer.getEllapsed();
 
         // NOTE: Check for inputs to see if note SE should be played
         for (let i = 0; i < 4; i++) {
             if (this.divaInput.isKeyTapped(FaceKeyMap[i]) || this.divaInput.isKeyTapped(ArrowKeyMap[i])) {
-                gameState.frame.noteSE = "commonNoteSE";
+                gameState.frame.noteSE = SE_BUTTON;
             }
 
             if (this.divaInput.isAnyKeyTapped("starL", "starR")) {
-                gameState.frame.noteSE = "starNoteSE";
+                gameState.frame.noteSE = SE_TOUCH;
             }
         }
 
@@ -224,8 +229,16 @@ class GameScene extends Phaser.Scene
 
         this.updateNotes();
 
-        if (EnableAudio && gameState.frame.noteSE != "none") {
-            this.sound.play(gameState.frame.noteSE);
+        if (EnableAudio) {
+            if (gameState.frame.noteSE == SE_BUTTON) {
+                this.buttonSE.play();
+            }
+            else if (gameState.frame.noteSE == SE_DOUBLE) {
+                this.doubleSE.play();
+            }
+            else if (gameState.frame.noteSE == SE_TOUCH) {
+                this.touchSE.play({ volume: 0.45 });
+            }
         }
 
         if (IsDebug) {

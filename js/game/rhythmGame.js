@@ -33,6 +33,12 @@ const NT_STAR_W    = 14;
 const NT_STAR_SP   = 15;
 const NT_STAR_SP2  = 16; // NOTE: Edit mode star
 
+// SOUND EFFECT TYPES
+const SE_NONE   = 0;
+const SE_BUTTON = 1;
+const SE_TOUCH  = 2;
+const SE_DOUBLE = 3;
+
 // INPUT 
 const FaceKeyMap  = ["tri", "circle", "cross", "square"];
 const ArrowKeyMap = ["up",  "right",  "down",  "left"];
@@ -42,7 +48,7 @@ let gameState = {
     combo: 0,
     maxCombo: 0,
     frame: {
-        noteSE: "none"
+        noteSE: SE_NONE
     }
 }
 
@@ -102,7 +108,7 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
         const wCond2 = input.isKeyTapped(ArrowKeyMap[index]) && input.isKeyDown(FaceKeyMap[index]);
 
         if (wCond1 || wCond2) {
-            gameState.frame.noteSE = "arrowNoteSE";
+            gameState.frame.noteSE = SE_DOUBLE;
             noteWasHit = true;
             note.state = NS_DEAD;
         }
@@ -119,7 +125,7 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
             if (input.isKeyReleased(chart.notes[noteIndex - 1].hitWith)) {
                 noteWasHit = true;
                 note.state = NS_DEAD;
-                gameState.frame.noteSE = "commonNoteSE";
+                gameState.frame.noteSE = SE_BUTTON;
 
                 // NOTE: This means there cannot be any notes in between long notes.
                 // TODO: *Even though it's not recommended to do this*, I think it

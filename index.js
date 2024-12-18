@@ -237,6 +237,8 @@ class GameScene extends Phaser.Scene
 
     updateNotes()
     {
+        console.log(this.gameWidth, this.gameHeight);
+
         if (this.chartLoaded == false)
             return;
 
@@ -344,7 +346,7 @@ class GameScene extends Phaser.Scene
                 //
                 if (noteObj.kiseki != null) {
                     if (!isNoteLong(note.type) || (isNoteLong(note.type) && !note.isRelease)) {
-                        const kisekiMeshData = calculateKiseki(note, flyingTime, this.chartTime);
+                        const kisekiMeshData = calculateKiseki(note, flyingTime, this.chartTime, [this.gameWidth, this.gameHeight]);
                         noteObj.kiseki.clear().addVertices(
                             kisekiMeshData.vertices,
                             kisekiMeshData.uvs,
@@ -359,7 +361,7 @@ class GameScene extends Phaser.Scene
                         //       content every frame.
                         noteObj.kiseki.preUpdate();
                         noteObj.kiseki.hideCCW = false;
-                        noteObj.kiseki.setOrtho(768, 432);
+                        noteObj.kiseki.setOrtho(this.gameWidth, this.gameHeight);
                     }
                 }
 
@@ -539,6 +541,7 @@ const config = {
     type: Phaser.AUTO,
     width: 768,
     height: 432,
+    canvas: document.getElementById("gameCanvas"),
     scene: GameScene
 };
 

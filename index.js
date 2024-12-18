@@ -51,7 +51,7 @@ function getNoteSprite(noteType, sprType) {
         if (noteType == NT_STAR_SP || noteType == NT_STAR_SP2) {
             return "Hand15";
         }
-        else if (!isNoteDouble(noteType) && !isNoteLong(noteType)) {
+        else if (!isNoteDouble(noteType)) {
             return "Hand01";
         }
     }
@@ -294,7 +294,7 @@ class GameScene extends Phaser.Scene
                         getNoteSprite(note.type, "Hand")
                     );
                     
-                    if (note.type != NT_STAR_SP && note.type != NT_STAP_SP2) {
+                    if (note.type != NT_STAR_SP && note.type != NT_STAR_SP2) {
                         noteObject.hand.setDisplayOrigin(10, 47);
                         noteObject.hand.setScale(
                             sprResScale[0] * SpriteScale.handScale[0],

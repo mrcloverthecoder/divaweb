@@ -27,9 +27,11 @@ const NT_TRIANGLE_LONG = 8;
 const NT_CIRCLE_LONG   = 9;
 const NT_CROSS_LONG    = 10;
 const NT_SQUARE_LONG   = 11;
-const NT_STAR          = 12;
-const NT_STAR_LONG     = 13;
-const NT_STAR_W        = 14;
+const NT_STAR      = 12;
+const NT_STAR_LONG = 13;
+const NT_STAR_W    = 14;
+const NT_STAR_SP   = 15;
+const NT_STAR_SP2  = 16; // NOTE: Edit mode star
 
 // INPUT 
 const FaceKeyMap  = ["tri", "circle", "cross", "square"];
@@ -148,10 +150,14 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
             }
         }
     }
-    else if (note.type == 12) {
+    else if (note.type == NT_STAR || note.type == NT_STAR_SP || note.type == NT_STAR_SP2) {
         if (input.isAnyKeyTapped("starL", "starR")) {
             noteWasHit = true;
             note.state = NS_DEAD;
+
+            if (note.type == NT_STAR_SP || note.type == NT_STAR_SP2) {
+                // TODO: Set to play the star SP sound effect
+            }
         }
     }
 

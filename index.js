@@ -25,6 +25,7 @@ const NoteVanishLength = 133;
 const SpriteScale = {
     sourceRes: [1280, 728],
     handScale: [1.23, 1.23],
+    handScaleSp: [0.75, 0.75],
     defaultTargetScale: [1.13, 1.13],
     defaultButtonScale: [1.13, 1.13],
     targetAppearScale: [1.23, 1.23],
@@ -35,7 +36,26 @@ const SpriteScale = {
 }
 
 // NOTE: Phaser helper functions
-function getNoteSprName(noteType, sprType) {
+function getNoteSprite(noteType, sprType) {
+    if (noteType == NT_STAR_SP || noteType == NT_STAR_SP2) {
+        // NOTE: Temporarily just using the fail sprite
+        if (sprType == "BTN") {
+            return "BStarFail";
+        }
+        else if (sprType == "TGT") {
+            return "TStarFail"
+        }
+    }
+
+    if (sprType == "Hand") {
+        if (noteType == NT_STAR_SP || noteType == NT_STAR_SP2) {
+            return "Hand15";
+        }
+        else if (!isNoteDouble(noteType) && !isNoteLong(noteType)) {
+            return "Hand01";
+        }
+    }
+
     return sprType + noteType.toString().padStart(2, "0");
 }
 
@@ -81,15 +101,20 @@ class GameScene extends Phaser.Scene
         
         for (let i = 0; i < 13; i++) {
             const num = i.toString().padStart(2, "0");
-            this.load.image(getNoteSprName(i, "BTN"), "/sprites/PSB" + num + ".png");
-            this.load.image(getNoteSprName(i, "TGT"), "/sprites/PST" + num + ".png");
+            this.load.image("BTN" + num, "/sprites/PSB" + num + ".png");
+            this.load.image("TGT" + num, "/sprites/PST" + num + ".png");
         }
 
+        this.load.image("TStarFail", "/sprites/Target_StarFail.png");
+        this.load.image("BStarFail", "/sprites/Button_StarFail.png");
+        this.load.image("TStarSuccess", "/sprites/Target_StarSuccess.png");
+        this.load.image("BStarSuccess", "/sprites/Button_StarSuccess.png");
         this.load.image("Hand01", "/sprites/Hand01.png");
         this.load.image("Hand04", "/sprites/Hand04.png");
         this.load.image("Hand05", "/sprites/Hand05.png");
         this.load.image("Hand06", "/sprites/Hand06.png");
         this.load.image("Hand07", "/sprites/Hand07.png");
+        this.load.image("Hand15", "/sprites/Hand15.png");
         this.load.image("Kiseki01", "/sprites/Kiseki01.png");
 
         if (EnableAudio) {
@@ -242,7 +267,7 @@ class GameScene extends Phaser.Scene
 
                     // NOTE: The button's position is updated further down
                     //       
-                    noteObject.button = this.add.image(0.0, 0.0, getNoteSprName(note["type"], "BTN"));
+                    noteObject.button = this.add.image(0.0, 0.0, getNoteSprite(note["type"], "BTN"));
                     noteObject.button.setScale(
                         sprResScale[0] * buttonSprScale[0],
                         sprResScale[1] * buttonSprScale[1]
@@ -253,7 +278,7 @@ class GameScene extends Phaser.Scene
                     noteObject.target = this.add.image(
                         targetScaledPos[0],
                         targetScaledPos[1],
-                        getNoteSprName(note["type"], "TGT")
+                        getNoteSprite(note["type"], "TGT")
                     );
 
                     noteObject.target.setScale(
@@ -266,14 +291,23 @@ class GameScene extends Phaser.Scene
                     noteObject.hand = this.add.image(
                         targetScaledPos[0],
                         targetScaledPos[1],
-                        isNoteDouble(note.type) ? getNoteSprName(note.type, "Hand") : "Hand01"
+                        getNoteSprite(note.type, "Hand")
                     );
                     
-                    noteObject.hand.setDisplayOrigin(10, 47);
-                    noteObject.hand.setScale(
-                        sprResScale[0] * SpriteScale.handScale[0],
-                        sprResScale[1] * SpriteScale.handScale[1]
-                    );
+                    if (note.type != NT_STAR_SP && note.type != NT_STAP_SP2) {
+                        noteObject.hand.setDisplayOrigin(10, 47);
+                        noteObject.hand.setScale(
+                            sprResScale[0] * SpriteScale.handScale[0],
+                            sprResScale[1] * SpriteScale.handScale[1]
+                        );
+                    }
+                    else {
+                        noteObject.hand.setDisplayOrigin(20, 116);
+                        noteObject.hand.setScale(
+                            sprResScale[0] * SpriteScale.handScaleSp[0],
+                            sprResScale[1] * SpriteScale.handScaleSp[1]
+                        );
+                    }
 
                     // NOTE: Create the note's kiseki mesh
                     //

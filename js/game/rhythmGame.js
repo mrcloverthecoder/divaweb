@@ -40,7 +40,7 @@ const SE_TOUCH  = 2;
 const SE_DOUBLE = 3;
 
 // INPUT 
-const FaceKeyMap  = ["tri", "circle", "cross", "square"];
+const FaceKeyMap  = ["triangle", "circle", "cross", "square"];
 const ArrowKeyMap = ["up",  "right",  "down",  "left"];
 
 // GLOBAL GAME STATE
@@ -92,7 +92,7 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
     // 2 - Cross
     // 3 - Square
     if (note.type >= 0 && note.type < 4) {
-        if (input.isAnyKeyTapped(FaceKeyMap[note.type], ArrowKeyMap[note.type])) {
+        if (input.isAnyActionTapped(FaceKeyMap[note.type], ArrowKeyMap[note.type])) {
             noteWasHit = true;
             note.state = NS_DEAD;
         }
@@ -104,8 +104,8 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
     // 7 - Left W
     else if (note.type >= 4 && note.type < 8) {
         const index = note.type - 4;
-        const wCond1 = input.isKeyTapped(FaceKeyMap[index]) && input.isKeyDown(ArrowKeyMap[index]);
-        const wCond2 = input.isKeyTapped(ArrowKeyMap[index]) && input.isKeyDown(FaceKeyMap[index]);
+        const wCond1 = input.isActionTapped(FaceKeyMap[index]) && input.isActionDown(ArrowKeyMap[index]);
+        const wCond2 = input.isActionTapped(ArrowKeyMap[index]) && input.isActionDown(FaceKeyMap[index]);
 
         if (wCond1 || wCond2) {
             gameState.frame.noteSE = SE_DOUBLE;
@@ -122,7 +122,7 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
         const index = note.type - 8;
 
         if (note.isRelease) {
-            if (input.isKeyReleased(chart.notes[noteIndex - 1].hitWith)) {
+            if (input.isActionReleased(chart.notes[noteIndex - 1].hitWith)) {
                 noteWasHit = true;
                 note.state = NS_DEAD;
                 gameState.frame.noteSE = SE_BUTTON;
@@ -135,14 +135,14 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
         }
         else {
             if (note.state != NS_HOLDING) {
-                if (input.isAnyKeyTapped(FaceKeyMap[index], ArrowKeyMap[index])) {
+                if (input.isAnyActionTapped(FaceKeyMap[index], ArrowKeyMap[index])) {
                     note.state = NS_HOLDING;
-                    note.hitWith = input.isKeyTapped(FaceKeyMap[index]) ? FaceKeyMap[index] : ArrowKeyMap[index];
+                    note.hitWith = input.isActionTapped(FaceKeyMap[index]) ? FaceKeyMap[index] : ArrowKeyMap[index];
                     noteWasHit = true;
                 }
             }
             else {
-                if (!input.isKeyDown(note.hitWith)) {
+                if (!input.isActionDown(note.hitWith)) {
                     // NOTE: Check if we're outside of the end note's timing window
                     let nextNote = chart.notes[noteIndex + 1];
                     const nextNoteTime = time - nextNote.time;
@@ -157,7 +157,7 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
         }
     }
     else if (note.type == NT_STAR || note.type == NT_STAR_SP || note.type == NT_STAR_SP2) {
-        if (input.isAnyKeyTapped("starL", "starR")) {
+        if (input.isAnyActionTapped("starL", "starR")) {
             noteWasHit = true;
             note.state = NS_DEAD;
 

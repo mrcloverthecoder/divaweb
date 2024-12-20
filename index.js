@@ -134,12 +134,13 @@ class GameScene extends Phaser.Scene
             this.dbgComboTxt = this.add.text(10, 50, "combo: 0");
         }
 
-        this.initInput();
-
         this.notesSpawned = []
         this.chartTimer = new HighResolutionTimer();
 
         this.gameStarted = false;
+
+        this.inputMgr = new InputManager();
+        this.inputMgr.init(this);
 
         if (EnableAudio) {
             this.buttonSE = this.sound.add("commonNoteSE");
@@ -157,6 +158,8 @@ class GameScene extends Phaser.Scene
         this.gameWidth  = this.sys.game.scale.gameSize.width;
         this.gameHeight = this.sys.game.scale.gameSize.height;
 
+        this.inputMgr.update(this);
+
         if (IsDebug) {
             this.meshDebug.clear();
             this.meshDebug.lineStyle(1, 0x00ff00);
@@ -173,17 +176,16 @@ class GameScene extends Phaser.Scene
             this.gameStarted = true;
         }
 
-        this.updateInput();
         gameState.frame.noteSE = SE_NONE;
         this.chartTime = this.chartTimer.getEllapsed();
 
         // NOTE: Check for inputs to see if note SE should be played
         for (let i = 0; i < 4; i++) {
-            if (this.divaInput.isKeyTapped(FaceKeyMap[i]) || this.divaInput.isKeyTapped(ArrowKeyMap[i])) {
+            if (this.inputMgr.isActionTapped(FaceKeyMap[i]) || this.inputMgr.isActionTapped(ArrowKeyMap[i])) {
                 gameState.frame.noteSE = SE_BUTTON;
             }
 
-            if (this.divaInput.isAnyKeyTapped("starL", "starR")) {
+            if (this.inputMgr.isAnyActionTapped("starL", "starR")) {
                 gameState.frame.noteSE = SE_TOUCH;
             }
         }
@@ -211,7 +213,7 @@ class GameScene extends Phaser.Scene
             }
             
             if (note.state == NS_POLLING || note.state == NS_HOLDING) {
-                processNoteHit(this, this.divaInput,this.chartTime, this.chart, note, noteIndex);
+                processNoteHit(this, this.inputMgr, this.chartTime, this.chart, note, noteIndex);
 
                 // TEMPORARY
                 if (note.hitStatus != NJ_NONE) {
@@ -250,8 +252,6 @@ class GameScene extends Phaser.Scene
 
     updateNotes()
     {
-        console.log(this.gameWidth, this.gameHeight);
-
         if (this.chartLoaded == false)
             return;
 
@@ -457,96 +457,6 @@ class GameScene extends Phaser.Scene
                 }
             }
         });
-    }
-
-    // Phaser's input functions didn't have some stuff I needed (or maybe I just didn't look
-    // far enough into the documentation), so I decided to make my own sort of "wrapper" around it.
-    //
-    initInput()
-    {
-        this.divaInput = {};
-        this.divaInput["tri"] = { "prev": false, "cur": false };
-        this.divaInput["circle"] = { "prev": false, "cur": false };
-        this.divaInput["cross"] = { "prev": false, "cur": false };
-        this.divaInput["square"] = { "prev": false, "cur": false };
-        this.divaInput["up"] = { "prev": false, "cur": false };
-        this.divaInput["right"] = { "prev": false, "cur": false };
-        this.divaInput["down"] = { "prev": false, "cur": false };
-        this.divaInput["left"] = { "prev": false, "cur": false };
-        this.divaInput["starL"] = { "prev": false, "cur": false };
-        this.divaInput["starR"] = { "prev": false, "cur": false };
- 
-        this.keyTriangle = this.input.keyboard.addKey("I");
-        this.keyCircle = this.input.keyboard.addKey("L");
-        this.keyCross = this.input.keyboard.addKey("K");
-        this.keySquare = this.input.keyboard.addKey("J");
-
-        this.keyUp = this.input.keyboard.addKey("W");
-        this.keyRight = this.input.keyboard.addKey("D");
-        this.keyDown = this.input.keyboard.addKey("S");
-        this.keyLeft = this.input.keyboard.addKey("A");
-
-        this.keyStarL1 = this.input.keyboard.addKey("Q");
-        this.keyStarL2 = this.input.keyboard.addKey("U");
-        this.keyStarR1 = this.input.keyboard.addKey("E");
-        this.keyStarR2 = this.input.keyboard.addKey("O");
-
-        this.divaInput.isKeyUp = function(k) { return !this[k]["cur"]; }
-        this.divaInput.isKeyDown = function(k) { return this[k]["cur"]; }
-        this.divaInput.isKeyTapped = function(k) { return this[k]["cur"] && !this[k]["prev"]; }
-        this.divaInput.isKeyReleased = function(k) { return !this[k]["cur"] && this[k]["prev"]; }
-        this.divaInput.isAnyKeyTapped = function(...ks)
-        {
-            let cond = false;
-            for (const k of ks) {
-                cond |= this.isKeyTapped(k);
-            }
-    
-            return cond;
-        }
-
-        this.divaInput.isAnyKeyReleased = function(...ks)
-        {
-            let cond = false;
-            for (const k of ks) {
-                cond |= this.isKeyReleased(k);
-            }
-    
-            return cond;
-        }
-    }
-
-    updateInput()
-    {
-        this.divaInput["tri"]["prev"] = this.divaInput["tri"]["cur"];
-        this.divaInput["tri"]["cur"]  = this.keyTriangle.isDown;
-
-        this.divaInput["circle"]["prev"] = this.divaInput["circle"]["cur"];
-        this.divaInput["circle"]["cur"]  = this.keyCircle.isDown;
-        
-        this.divaInput["cross"]["prev"] = this.divaInput["cross"]["cur"];
-        this.divaInput["cross"]["cur"]  = this.keyCross.isDown;
-
-        this.divaInput["square"]["prev"] = this.divaInput["square"]["cur"];
-        this.divaInput["square"]["cur"]  = this.keySquare.isDown;
-
-        this.divaInput["up"]["prev"] = this.divaInput["up"]["cur"];
-        this.divaInput["up"]["cur"]  = this.keyUp.isDown;
-
-        this.divaInput["right"]["prev"] = this.divaInput["right"]["cur"];
-        this.divaInput["right"]["cur"]  = this.keyRight.isDown;
-        
-        this.divaInput["down"]["prev"] = this.divaInput["down"]["cur"];
-        this.divaInput["down"]["cur"]  = this.keyDown.isDown;
-
-        this.divaInput["left"]["prev"] = this.divaInput["left"]["cur"];
-        this.divaInput["left"]["cur"]  = this.keyLeft.isDown;
-
-        this.divaInput["starL"]["prev"] = this.divaInput["starL"]["cur"];
-        this.divaInput["starL"]["cur"]  = this.keyStarL1.isDown;
-
-        this.divaInput["starR"]["prev"] = this.divaInput["starR"]["cur"];
-        this.divaInput["starR"]["cur"]  = this.keyStarR2.isDown;
     }
 }
 

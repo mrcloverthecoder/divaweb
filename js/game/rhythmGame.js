@@ -45,7 +45,7 @@ const FaceKeyMap  = ["triangle", "circle", "cross", "square"];
 const ArrowKeyMap = ["up",  "right",  "down",  "left"];
 
 // OTHER CONSTANTS
-const SuccessThreshold = 75;
+const SuccessThreshold = 88;
 
 // GLOBAL GAME STATE
 let gameState = {

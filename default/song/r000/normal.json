@@ -6,6 +6,23 @@
       "flyingTime": 1860.4651162790697
     }
   ],
+  "events": [
+    {
+      "name": "TechZone",
+      "start": 73520.9,
+      "end": 80032.53
+    },
+    {
+      "name": "TechZone",
+      "start": 115148.81,
+      "end": 124683.69
+    },
+    {
+      "name": "ChanceTime",
+      "start": 126311.6,
+      "end": 155148.81
+    }
+  ],
   "notes": [
     {
       "time": 6079.04511627907,

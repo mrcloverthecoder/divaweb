@@ -5,10 +5,19 @@
       "flyingTime": 1500
     }
   ],
+  "events": [
+    {
+      "name": "ChanceTime",
+      "start": 1000.0,
+      "end": 6000.0
+    }
+  ],
   "notes": [
     {
       "time": 1500.0,
-      "type": 2,
+      "type": 8,
+      "length": 375.0,
+      "isRelease": false,
       "posX": 912.0,
       "posY": 576.0,
       "distance": 1200.0,
@@ -18,11 +27,13 @@
     },
     {
       "time": 1875.0,
-      "type": 2,
+      "type": 8,
+      "length": -1,
+      "isRelease": true,
       "posX": 912.0,
       "posY": 576.0,
       "distance": 1200.0,
-      "angle": 90.0,
+      "angle": 0.0,
       "amplitude": 1250,
       "frequency": -2
     },
@@ -147,18 +158,8 @@
       "frequency": -5
     },
     {
-      "time": 4312.5,
-      "type": 2,
-      "posX": 1584.0,
-      "posY": 576.0,
-      "distance": 1200.0,
-      "angle": 0.0,
-      "amplitude": 450,
-      "frequency": -5
-    },
-    {
       "time": 4406.25,
-      "type": 2,
+      "type": 15,
       "posX": 1632.0,
       "posY": 576.0,
       "distance": 1200.0,

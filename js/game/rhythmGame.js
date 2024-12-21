@@ -49,7 +49,10 @@ let gameState = {
     maxCombo: 0,
     frame: {
         noteSE: SE_NONE
-    }
+    },
+    events: [
+
+    ]
 }
 
 // HELPER FUNCTIONS
@@ -78,9 +81,20 @@ function getNoteButtonPosition(time, flyingTime, note, offsetX = 0.0, offsetY = 
 }
 
 //
-function resetGameState() {
+function resetGameState(chart) {
     gameState.combo = 0;
     gameState.maxCombo = 0;
+    gameState.events = [];
+
+    for (const ev of chart.events) {
+        if (ev.name == EV_CHANCE_TIME || ev.name == EV_TECH_ZONE) {
+            gameState.events.push({
+                notesHit: 0,
+                noteCount: ev.noteCount,
+                failed: false,
+            });
+        }
+    }
 }
 
 function processNoteHit(scene, input, time, chart, note, noteIndex) {
@@ -209,6 +223,22 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
         }
         else {
             note.state = NS_VANISHING;
+        }
+    }
+
+    if (noteWasHit && note.hitStatus != NJ_BAD) {
+        console.log(note.eventIndex);
+        if (note.eventIndex != -1) {
+            let event = gameState.events[note.eventIndex];
+
+            if (note.eventType == EV_CHANCE_TIME || (note.eventType == EV_TECH_ZONE && !event.failed)) {
+                event.notesHit++;
+            }
+        }
+    }
+    else if (note.hitStatus == NJ_WORST || note.hitStatus == NJ_BAD) {
+        if (note.eventIndex != -1 && note.eventType == EV_TECH_ZONE) {
+            gameState.events[note.eventIndex].failed = true;
         }
     }
 

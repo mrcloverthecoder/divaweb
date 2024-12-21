@@ -93,7 +93,7 @@ class GameScene extends Phaser.Scene
         fetch("/default/song/" + DebugSongID + "/normal.json")
             .then((response) => response.json())
             .then((json) => {
-                this.chart = json;
+                this.chart = preprocessChart(json);
                 this.chartLoaded = true;
             });
        
@@ -132,6 +132,7 @@ class GameScene extends Phaser.Scene
             this.dbgNoteRank = "none"
             this.dbgRankTxt = this.add.text(10, 30, "");
             this.dbgComboTxt = this.add.text(10, 50, "combo: 0");
+            this.dbgChanceTxt = this.add.text(10, 70, "chance: 0%");
         }
 
         this.notesSpawned = []
@@ -141,6 +142,8 @@ class GameScene extends Phaser.Scene
 
         this.inputMgr = new InputManager();
         this.inputMgr.init(this);
+
+        resetGameState(this.chart);
 
         if (EnableAudio) {
             this.buttonSE = this.sound.add("commonNoteSE");
@@ -247,6 +250,40 @@ class GameScene extends Phaser.Scene
             this.dbgTimeTxt.text = "time: " + (this.chartTime / 1000.0).toFixed(2);
             this.dbgRankTxt.text = "rank: " + this.dbgNoteRank;
             this.dbgComboTxt.text = "combo: " + gameState.combo + " / " + gameState.maxCombo;
+
+            //
+            //
+            const ev = getCurrentEvent(this.chart, this.chartTime);
+            if (ev != null) {
+                const eventState = gameState.events[ev.index];
+
+                if (ev.name == EV_CHANCE_TIME) {
+                    this.dbgChanceTxt.text = "Chance Time: " + Math.round(eventState.notesHit / eventState.noteCount * 100) + "%";
+                }
+                else if (ev.name == EV_TECH_ZONE) {
+                    this.dbgChanceTxt.text = "Tech Zone: " + eventState.notesHit + " / " + eventState.noteCount;
+                    if (eventState.notesHit == eventState.noteCount) {
+                        this.dbgChanceTxt.text += " [SUCCESS!]";
+                    }
+                    else if (eventState.failed) {
+                        this.dbgChanceTxt.text += " [FAILED!]";
+                    }
+                    else {
+                        this.dbgChanceTxt.text += " [IN PROGRESS]";
+                    }
+                }
+            }
+            else {
+                const nextEvent = getNextEvent(this.chart, this.chartTime, null);
+                if (nextEvent != null) {
+                    const timeRemaining = Math.round((nextEvent.start - this.chartTime) / 1000);
+                    this.dbgChanceTxt.text = timeRemaining + "s until ";
+                    this.dbgChanceTxt.text += (nextEvent.name == EV_CHANCE_TIME) ? "Chance Time" : "Technical Zone"; 
+                }
+                else {
+                    this.dbgChanceTxt.text = "No event";
+                }
+            }
         }
     }
 

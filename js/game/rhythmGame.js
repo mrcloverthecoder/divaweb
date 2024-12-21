@@ -38,15 +38,21 @@ const SE_NONE   = 0;
 const SE_BUTTON = 1;
 const SE_TOUCH  = 2;
 const SE_DOUBLE = 3;
+const SE_TOUCH_SP = 4;
 
 // INPUT 
 const FaceKeyMap  = ["triangle", "circle", "cross", "square"];
 const ArrowKeyMap = ["up",  "right",  "down",  "left"];
 
+// OTHER CONSTANTS
+const SuccessThreshold = 75;
+
 // GLOBAL GAME STATE
 let gameState = {
     combo: 0,
     maxCombo: 0,
+    chancePercentage: 0,
+    success: false,
     frame: {
         noteSE: SE_NONE
     },
@@ -84,6 +90,7 @@ function getNoteButtonPosition(time, flyingTime, note, offsetX = 0.0, offsetY = 
 function resetGameState(chart) {
     gameState.combo = 0;
     gameState.maxCombo = 0;
+    gameState.success = false;
     gameState.events = [];
 
     for (const ev of chart.events) {
@@ -176,7 +183,10 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
             note.state = NS_DEAD;
 
             if (note.type == NT_STAR_SP || note.type == NT_STAR_SP2) {
-                // TODO: Set to play the star SP sound effect
+                if (gameState.chancePercentage >= SuccessThreshold) {
+                    gameState.success = true;
+                    gameState.frame.noteSE = SE_TOUCH_SP;
+                }
             }
         }
     }
@@ -227,12 +237,12 @@ function processNoteHit(scene, input, time, chart, note, noteIndex) {
     }
 
     if (noteWasHit && note.hitStatus != NJ_BAD) {
-        console.log(note.eventIndex);
         if (note.eventIndex != -1) {
             let event = gameState.events[note.eventIndex];
 
             if (note.eventType == EV_CHANCE_TIME || (note.eventType == EV_TECH_ZONE && !event.failed)) {
                 event.notesHit++;
+                gameState.chancePercentage = event.notesHit / event.noteCount * 100;
             }
         }
     }

@@ -122,6 +122,7 @@ class GameScene extends Phaser.Scene
             this.load.audio("commonNoteSE", "/sound/NoteSE_01.wav");
             this.load.audio("arrowNoteSE", "/sound/NoteSE_02.wav");
             this.load.audio("starNoteSE", "/sound/NoteSE_03.wav");
+            this.load.audio("spNoteSE", "/sound/NoteSE_Cymbal.wav");
         }
     }
 
@@ -146,9 +147,10 @@ class GameScene extends Phaser.Scene
         resetGameState(this.chart);
 
         if (EnableAudio) {
-            this.buttonSE = this.sound.add("commonNoteSE");
-            this.doubleSE = this.sound.add("arrowNoteSE");
-            this.touchSE  = this.sound.add("starNoteSE");
+            this.buttonSE  = this.sound.add("commonNoteSE");
+            this.doubleSE  = this.sound.add("arrowNoteSE");
+            this.touchSE   = this.sound.add("starNoteSE");
+            this.specialSE = this.sound.add("spNoteSE");
         }
         
         if (IsDebug) {
@@ -244,6 +246,9 @@ class GameScene extends Phaser.Scene
             else if (gameState.frame.noteSE == SE_TOUCH) {
                 this.touchSE.play({ volume: 0.45 });
             }
+            else if (gameState.frame.noteSE == SE_TOUCH_SP) {
+                this.specialSE.play({ volume: 0.7 });
+            }
         }
 
         if (IsDebug) {
@@ -258,7 +263,7 @@ class GameScene extends Phaser.Scene
                 const eventState = gameState.events[ev.index];
 
                 if (ev.name == EV_CHANCE_TIME) {
-                    this.dbgChanceTxt.text = "Chance Time: " + Math.round(eventState.notesHit / eventState.noteCount * 100) + "%";
+                    this.dbgChanceTxt.text = "Chance Time: " + Math.round(gameState.chancePercentage) + "%";
                 }
                 else if (ev.name == EV_TECH_ZONE) {
                     this.dbgChanceTxt.text = "Tech Zone: " + eventState.notesHit + " / " + eventState.noteCount;
@@ -391,6 +396,13 @@ class GameScene extends Phaser.Scene
                 }
 
                 let noteObj = this.noteObjects[noteIndex];
+
+                if (note.type == NT_STAR_SP || note.type == NT_STAR_SP2) {
+                    if (gameState.chancePercentage >= SuccessThreshold) {
+                        noteObj.target.setTexture("TStarSuccess");
+                        noteObj.button.setTexture("BStarSuccess");
+                    }
+                }
 
                 // NOTE: Update kiseki mesh
                 //

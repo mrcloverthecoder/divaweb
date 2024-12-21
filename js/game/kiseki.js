@@ -53,12 +53,10 @@ function calculateKisekiRange(note, flyingTime, time, timeStart, length, color, 
         }
     }
 
-    mesh.vertices = transformScreenSpace(mesh.vertices, [768, 432]);
-
     return mesh;
 }
 
-function calculateKiseki(note, flyingTime, time) {
+function calculateKiseki(note, flyingTime, time, res) {
     let startTime = time;
     let length = isNoteLong(note.type) ? note.length : flyingTime * KisekiLength;
     let alphaOnEdges = isNoteLong(note.type) ? false : true;
@@ -94,7 +92,7 @@ function calculateKiseki(note, flyingTime, time) {
         // TODO: Add logic for setting the chance time kiseki
     }
     else if (isNoteLong(note.type)) {
-        width = 64;
+        width = 56;
         startV = 64 + 32 * (note.type - NT_TRIANGLE_LONG);
         endV = startV + 32;
 
@@ -104,5 +102,8 @@ function calculateKiseki(note, flyingTime, time) {
         }
     }
 
-    return calculateKisekiRange(note, flyingTime, time, startTime, length, color, alphaOnEdges, startV / 256, endV / 256, width);
+    let mesh = calculateKisekiRange(note, flyingTime, time, startTime, length, color, alphaOnEdges, startV / 256, endV / 256, width);
+    mesh.vertices = transformScreenSpace(mesh.vertices, res);
+
+    return mesh;
 }

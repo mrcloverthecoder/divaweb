@@ -2,103 +2,19 @@
   "tempo": [
     {
       "time": 0.0,
-      "flyingTime": 2000
+      "flyingTime": 3000
     }
   ],
   "notes": [
 		{
-      "time": 2000.0,
-      "type": 8,
-			"length": 1000.0,
-			"isRelease": false,
-      "posX": 600.0,
-      "posY": 300.0,
-      "distance": 1200.0,
-      "angle": -90,
-      "amplitude": 500,
-      "frequency": 2
-    },
-		{
       "time": 3000.0,
-      "type": 8,
+      "type": 15,
 			"length": -1,
-			"isRelease": true,
-      "posX": 600.0,
-      "posY": 300.0,
-      "distance": 1200.0,
-      "angle": -90,
-      "amplitude": 500,
-      "frequency": 2
-    },
-    {
-      "time": 3500.0,
-      "type": 9,
-			"length": 1000.0,
 			"isRelease": false,
-      "posX": 600.0,
-      "posY": 410.0,
+      "posX": 960.0,
+      "posY": 900.0,
       "distance": 1200.0,
-      "angle": -90,
-      "amplitude": 500,
-      "frequency": 2
-    },
-		{
-      "time": 4500.0,
-      "type": 9,
-			"length": -1,
-			"isRelease": true,
-      "posX": 600.0,
-      "posY": 410.0,
-      "distance": 1200.0,
-      "angle": -90,
-      "amplitude": 500,
-      "frequency": 2
-    },
-    {
-      "time": 5000.0,
-      "type": 10,
-			"length": 1000.0,
-			"isRelease": false,
-      "posX": 600.0,
-      "posY": 520.0,
-      "distance": 1200.0,
-      "angle": -90,
-      "amplitude": 500,
-      "frequency": 2
-    },
-		{
-      "time": 6000.0,
-      "type": 10,
-			"length": -1,
-			"isRelease": true,
-      "posX": 600.0,
-      "posY": 520.0,
-      "distance": 1200.0,
-      "angle": -90,
-      "amplitude": 500,
-      "frequency": 2
-    },
-    {
-      "time": 6500.0,
-      "type": 11,
-			"length": 1000.0,
-			"isRelease": false,
-      "posX": 600.0,
-      "posY": 630.0,
-      "distance": 1200.0,
-      "angle": -90,
-      "amplitude": 500,
-      "frequency": 2
-    },
-		{
-      "time": 7500.0,
-      "type": 11,
-			"length": -1,
-			"isRelease": true,
-      "posX": 600.0,
-      "posY": 630.0,
-      "distance": 1200.0,
-      "angle": -90,
+      "angle": 0,
       "amplitude": 500,
       "frequency": 2
     }

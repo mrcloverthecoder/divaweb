@@ -17,8 +17,45 @@ const SafeWindow = 100;
 const BadWindow  = 130;
 const NoteVanishLength = 133;
 
+//
+//
+//
+//
+
+const SpriteScale = {
+    sourceRes: [1280, 728],
+    handScale: [1.23, 1.23],
+    handScaleSp: [0.75, 0.75],
+    defaultTargetScale: [1.13, 1.13],
+    defaultButtonScale: [1.13, 1.13],
+    targetAppearScale: [1.23, 1.23],
+
+    notes: {
+
+    }
+}
+
 // NOTE: Phaser helper functions
-function getNoteSprName(noteType, sprType) {
+function getNoteSprite(noteType, sprType) {
+    if (noteType == NT_STAR_SP || noteType == NT_STAR_SP2) {
+        // NOTE: Temporarily just using the fail sprite
+        if (sprType == "BTN") {
+            return "BStarFail";
+        }
+        else if (sprType == "TGT") {
+            return "TStarFail"
+        }
+    }
+
+    if (sprType == "Hand") {
+        if (noteType == NT_STAR_SP || noteType == NT_STAR_SP2) {
+            return "Hand15";
+        }
+        else if (!isNoteDouble(noteType)) {
+            return "Hand01";
+        }
+    }
+
     return sprType + noteType.toString().padStart(2, "0");
 }
 
@@ -64,22 +101,27 @@ class GameScene extends Phaser.Scene
         
         for (let i = 0; i < 13; i++) {
             const num = i.toString().padStart(2, "0");
-            this.load.image(getNoteSprName(i, "BTN"), "/sprites/PSB" + num + ".png");
-            this.load.image(getNoteSprName(i, "TGT"), "/sprites/PST" + num + ".png");
+            this.load.image("BTN" + num, "/sprites/PSB" + num + ".png");
+            this.load.image("TGT" + num, "/sprites/PST" + num + ".png");
         }
 
+        this.load.image("TStarFail", "/sprites/Target_StarFail.png");
+        this.load.image("BStarFail", "/sprites/Button_StarFail.png");
+        this.load.image("TStarSuccess", "/sprites/Target_StarSuccess.png");
+        this.load.image("BStarSuccess", "/sprites/Button_StarSuccess.png");
         this.load.image("Hand01", "/sprites/Hand01.png");
         this.load.image("Hand04", "/sprites/Hand04.png");
         this.load.image("Hand05", "/sprites/Hand05.png");
         this.load.image("Hand06", "/sprites/Hand06.png");
         this.load.image("Hand07", "/sprites/Hand07.png");
+        this.load.image("Hand15", "/sprites/Hand15.png");
         this.load.image("Kiseki01", "/sprites/Kiseki01.png");
 
         if (EnableAudio) {
             this.load.audio("music", "/default/song/" + DebugSongID + "/music.mp3");
             this.load.audio("commonNoteSE", "/sound/NoteSE_01.wav");
-            this.load.audio("starNoteSE", "/sound/NoteSE_01.wav");
             this.load.audio("arrowNoteSE", "/sound/NoteSE_02.wav");
+            this.load.audio("starNoteSE", "/sound/NoteSE_03.wav");
         }
     }
 
@@ -92,21 +134,32 @@ class GameScene extends Phaser.Scene
             this.dbgComboTxt = this.add.text(10, 50, "combo: 0");
         }
 
-        this.initInput();
-
         this.notesSpawned = []
         this.chartTimer = new HighResolutionTimer();
 
         this.gameStarted = false;
+
+        this.inputMgr = new InputManager();
+        this.inputMgr.init(this);
+
+        if (EnableAudio) {
+            this.buttonSE = this.sound.add("commonNoteSE");
+            this.doubleSE = this.sound.add("arrowNoteSE");
+            this.touchSE  = this.sound.add("starNoteSE");
+        }
         
         if (IsDebug) {
             this.meshDebug = this.add.graphics();
-            
         }
     }
 
     update()
     {
+        this.gameWidth  = this.sys.game.scale.gameSize.width;
+        this.gameHeight = this.sys.game.scale.gameSize.height;
+
+        this.inputMgr.update(this);
+
         if (IsDebug) {
             this.meshDebug.clear();
             this.meshDebug.lineStyle(1, 0x00ff00);
@@ -123,18 +176,17 @@ class GameScene extends Phaser.Scene
             this.gameStarted = true;
         }
 
-        this.updateInput();
-        gameState.frame.noteSE = "none";
+        gameState.frame.noteSE = SE_NONE;
         this.chartTime = this.chartTimer.getEllapsed();
 
         // NOTE: Check for inputs to see if note SE should be played
         for (let i = 0; i < 4; i++) {
-            if (this.divaInput.isKeyTapped(FaceKeyMap[i]) || this.divaInput.isKeyTapped(ArrowKeyMap[i])) {
-                gameState.frame.noteSE = "commonNoteSE";
+            if (this.inputMgr.isActionTapped(FaceKeyMap[i]) || this.inputMgr.isActionTapped(ArrowKeyMap[i])) {
+                gameState.frame.noteSE = SE_BUTTON;
             }
 
-            if (this.divaInput.isAnyKeyTapped("starL", "starR")) {
-                gameState.frame.noteSE = "starNoteSE";
+            if (this.inputMgr.isAnyActionTapped("starL", "starR")) {
+                gameState.frame.noteSE = SE_TOUCH;
             }
         }
 
@@ -161,7 +213,7 @@ class GameScene extends Phaser.Scene
             }
             
             if (note.state == NS_POLLING || note.state == NS_HOLDING) {
-                processNoteHit(this, this.divaInput,this.chartTime, this.chart, note, noteIndex);
+                processNoteHit(this, this.inputMgr, this.chartTime, this.chart, note, noteIndex);
 
                 // TEMPORARY
                 if (note.hitStatus != NJ_NONE) {
@@ -179,8 +231,16 @@ class GameScene extends Phaser.Scene
 
         this.updateNotes();
 
-        if (EnableAudio && gameState.frame.noteSE != "none") {
-            this.sound.play(gameState.frame.noteSE);
+        if (EnableAudio) {
+            if (gameState.frame.noteSE == SE_BUTTON) {
+                this.buttonSE.play();
+            }
+            else if (gameState.frame.noteSE == SE_DOUBLE) {
+                this.doubleSE.play();
+            }
+            else if (gameState.frame.noteSE == SE_TOUCH) {
+                this.touchSE.play({ volume: 0.45 });
+            }
         }
 
         if (IsDebug) {
@@ -195,58 +255,88 @@ class GameScene extends Phaser.Scene
         if (this.chartLoaded == false)
             return;
 
+        const sprResScale = [
+            this.gameWidth / SpriteScale.sourceRes[0],
+            this.gameHeight / SpriteScale.sourceRes[1]
+        ];
+
         const flyingTime = getFlyingTime(this.chartTime, this.chart);
-        this.chart["notes"].forEach((note, noteIndex) => {
+        this.chart.notes.forEach((note, noteIndex) => {
             const noteSpawnTime = note["time"] - flyingTime;
             const noteHitTime = note["time"];
             const noteDespawnBeginTime = noteHitTime + SafeWindow;
-            const noteDespawnTime = noteDespawnBeginTime + NoteVanishLength;
             
             if (this.chartTime >= noteSpawnTime) {
                 if (!note.added) {
                     let noteObject = {};
 
                     const targetScaledPos = getCanvasScaledNotePos(
-                        note["posX"],
-                        note["posY"],
-                        this.sys.game.scale.gameSize["width"],
-                        this.sys.game.scale.gameSize["height"]
+                        note.posX,
+                        note.posY,
+                        this.gameWidth,
+                        this.gameHeight
                     );
 
-                    noteObject["target"] = this.add.image(
+                    const buttonSprScale = SpriteScale.notes.hasOwnProperty(note.type) ? SpriteScale.notes[note.type].buttonBaseScale : SpriteScale.defaultButtonScale; 
+                    const targetSprScale = SpriteScale.notes.hasOwnProperty(note.type) ? SpriteScale.notes[note.type].targetBaseScale : SpriteScale.defaultTargetScale;
+
+                    // NOTE: The button's position is updated further down
+                    //       
+                    noteObject.button = this.add.image(0.0, 0.0, getNoteSprite(note["type"], "BTN"));
+                    noteObject.button.setScale(
+                        sprResScale[0] * buttonSprScale[0],
+                        sprResScale[1] * buttonSprScale[1]
+                    )
+
+                    //
+                    //
+                    noteObject.target = this.add.image(
                         targetScaledPos[0],
                         targetScaledPos[1],
-                        getNoteSprName(note["type"], "TGT")
+                        getNoteSprite(note["type"], "TGT")
                     );
 
+                    noteObject.target.setScale(
+                        sprResScale[0] * targetSprScale[0],
+                        sprResScale[1] * targetSprScale[1]
+                    )
+
+                    //
+                    //
                     noteObject.hand = this.add.image(
                         targetScaledPos[0],
                         targetScaledPos[1],
-                        isNoteDouble(note.type) ? getNoteSprName(note.type, "Hand") : "Hand01"
+                        getNoteSprite(note.type, "Hand")
                     );
-
-                    noteObject.hand.setDisplayOrigin(10, 47);
-                    noteObject.hand.setScale(0.75, 0.75);
+                    
+                    if (note.type != NT_STAR_SP && note.type != NT_STAR_SP2) {
+                        noteObject.hand.setDisplayOrigin(10, 47);
+                        noteObject.hand.setScale(
+                            sprResScale[0] * SpriteScale.handScale[0],
+                            sprResScale[1] * SpriteScale.handScale[1]
+                        );
+                    }
+                    else {
+                        noteObject.hand.setDisplayOrigin(20, 116);
+                        noteObject.hand.setScale(
+                            sprResScale[0] * SpriteScale.handScaleSp[0],
+                            sprResScale[1] * SpriteScale.handScaleSp[1]
+                        );
+                    }
 
                     // NOTE: Create the note's kiseki mesh
                     //
                     noteObject.kiseki = this.add.mesh(
-                        768 / 2,
-                        432 / 2,
+                        this.gameWidth / 2,
+                        this.gameHeight / 2,
                         "Kiseki01"
                     );
 
                     if (IsDebug) { noteObject.kiseki.setDebug(this.meshDebug); }
                     // NOTE: Required so that the mesh faces are updated every frame
                     noteObject.kiseki.ignoreDirtyCache = true;
+                    // NOTE: Won't draw faces correctly if it's true
                     noteObject.kiseki.hideCCW = false;
-                    
-                    // NOTE: Position is updated further down
-                    //       
-                    noteObject["button"] = this.add.image(0.0, 0.0, getNoteSprName(note["type"], "BTN"));
-
-                    noteObject["target"].setDisplaySize(46, 46);
-                    noteObject["button"].setDisplaySize(46, 46);
 
                     // NOTE: Set Z index so that buttons always appear on top of targets
                     noteObject.target.depth = 100;
@@ -254,16 +344,23 @@ class GameScene extends Phaser.Scene
                     noteObject.kiseki.depth = 101;
                     noteObject.button.depth = 105;
 
+                    // NOTE: Keep base scale for reference
+                    noteObject.tgtBaseScale = [noteObject.target.scaleX, noteObject.target.scaleY];
+                    noteObject.butBaseScale = [noteObject.button.scaleX, noteObject.button.scaleY];
+                    noteObject.handBaseScale = [noteObject.hand.scaleX, noteObject.hand.scaleY];
+
                     this.noteObjects.push(noteObject);
                     note.added = true;
                 }
 
+                let noteObj = this.noteObjects[noteIndex];
+
                 // NOTE: Update kiseki mesh
                 //
-                if (this.noteObjects[noteIndex].kiseki != null) {
+                if (noteObj.kiseki != null) {
                     if (!isNoteLong(note.type) || (isNoteLong(note.type) && !note.isRelease)) {
-                        const kisekiMeshData = calculateKiseki(note, flyingTime, this.chartTime);
-                        this.noteObjects[noteIndex].kiseki.clear().addVertices(
+                        const kisekiMeshData = calculateKiseki(note, flyingTime, this.chartTime, [this.gameWidth, this.gameHeight]);
+                        noteObj.kiseki.clear().addVertices(
                             kisekiMeshData.vertices,
                             kisekiMeshData.uvs,
                             kisekiMeshData.indices,
@@ -275,149 +372,91 @@ class GameScene extends Phaser.Scene
 
                         // NOTE: The update function must be called manually when updating the mesh's
                         //       content every frame.
-                        this.noteObjects[noteIndex].kiseki.preUpdate();
-                        this.noteObjects[noteIndex].kiseki.hideCCW = false;
-                        this.noteObjects[noteIndex].kiseki.setOrtho(768, 432);
+                        noteObj.kiseki.preUpdate();
+                        noteObj.kiseki.hideCCW = false;
+                        noteObj.kiseki.setOrtho(this.gameWidth, this.gameHeight);
                     }
                 }
 
                 let handRot = lerp2(0, 360, note.time - flyingTime, note.time, this.chartTime);
+                if (handRot > 360) { handRot = 360; }
 
                 // NOTE: Update note button position
                 let buttonPos = getNoteButtonPosition(this.chartTime, flyingTime, note);
                 if (isNoteLong(note.type) && note.state == NS_HOLDING) {
                     buttonPos = [note.posX, note.posY];
-                    handRot = 0.0;
                 }
                 
                 const buttonScaledPos = getCanvasScaledNotePos(
                     buttonPos[0],
                     buttonPos[1],
-                    this.sys.game.scale.gameSize["width"],
-                    this.sys.game.scale.gameSize["height"]
+                    this.gameWidth,
+                    this.gameHeight
                 );
 
-                this.noteObjects[noteIndex]["button"].setPosition(
+                if (this.chartTime - noteSpawnTime < 200) {
+                    noteObj.target.setScale(
+                        noteObj.tgtBaseScale[0] * SpriteScale.targetAppearScale[0],
+                        noteObj.tgtBaseScale[1] * SpriteScale.targetAppearScale[1]
+                    );
+
+                    noteObj.hand.setScale(
+                        noteObj.handBaseScale[0] * SpriteScale.targetAppearScale[0],
+                        noteObj.handBaseScale[1] * SpriteScale.targetAppearScale[1]
+                    );
+                }
+                else {
+                    noteObj.target.setScale(noteObj.tgtBaseScale[0], noteObj.tgtBaseScale[1]);
+                    noteObj.hand.setScale(noteObj.handBaseScale[0], noteObj.handBaseScale[1]);
+                }
+
+                noteObj.button.setPosition(
                     buttonScaledPos[0],
                     buttonScaledPos[1]
                 );
 
-                this.noteObjects[noteIndex].hand.setRotation(degToRad(handRot));
+                noteObj.hand.setRotation(degToRad(handRot));
 
                 // NOTE: Do the note's "shrinking" exit animation once it's past it's hit time
                 if (note.state == NS_VANISHING) {
                     const scale = 1.0 - (this.chartTime - noteDespawnBeginTime) / NoteVanishLength;
-                    this.noteObjects[noteIndex]["target"].setDisplaySize(46 * scale, 46 * scale);
-                    this.noteObjects[noteIndex]["button"].setDisplaySize(46 * scale, 46 * scale);
-                    this.noteObjects[noteIndex].hand.setScale(0.75 * scale, 0.75 * scale);
+
+                    noteObj.button.setScale(
+                        noteObj.butBaseScale[0] * scale,
+                        noteObj.butBaseScale[1] * scale
+                    );
+
+                    noteObj.target.setScale(
+                        noteObj.tgtBaseScale[0] * scale,
+                        noteObj.tgtBaseScale[1] * scale
+                    );
+
+                    noteObj.hand.setScale(
+                        noteObj.handBaseScale[0] * scale,
+                        noteObj.handBaseScale[1] * scale
+                    );
 
                     if (scale <= 0.0) {
                         note.state = NS_DEAD;
                     }
                 }
+                else if (note.state == NS_HOLDING) {
+                    noteObj.button.visible = false;
+                    noteObj.kiseki.depth = 99;
+                }
 
                 if (note.state == NS_DEAD) {
-                    this.noteObjects[noteIndex]["target"].visible = false;
-                    this.noteObjects[noteIndex]["button"].visible = false;
-                    this.noteObjects[noteIndex].hand.visible = false;
+                    noteObj.target.visible = false;
+                    noteObj.button.visible = false;
+                    noteObj.hand.visible = false;
 
-                    if (this.noteObjects[noteIndex].kiseki != null) {
-                        this.noteObjects[noteIndex].kiseki.destroy();
-                        this.noteObjects[noteIndex].kiseki = null;
+                    if (noteObj.kiseki != null) {
+                        noteObj.kiseki.destroy();
+                        noteObj.kiseki = null;
                     }
                 }
             }
         });
-    }
-
-    // Phaser's input functions didn't have some stuff I needed (or maybe I just didn't look
-    // far enough into the documentation), so I decided to make my own sort of "wrapper" around it.
-    //
-    initInput()
-    {
-        this.divaInput = {};
-        this.divaInput["tri"] = { "prev": false, "cur": false };
-        this.divaInput["circle"] = { "prev": false, "cur": false };
-        this.divaInput["cross"] = { "prev": false, "cur": false };
-        this.divaInput["square"] = { "prev": false, "cur": false };
-        this.divaInput["up"] = { "prev": false, "cur": false };
-        this.divaInput["right"] = { "prev": false, "cur": false };
-        this.divaInput["down"] = { "prev": false, "cur": false };
-        this.divaInput["left"] = { "prev": false, "cur": false };
-        this.divaInput["starL"] = { "prev": false, "cur": false };
-        this.divaInput["starR"] = { "prev": false, "cur": false };
- 
-        this.keyTriangle = this.input.keyboard.addKey("I");
-        this.keyCircle = this.input.keyboard.addKey("L");
-        this.keyCross = this.input.keyboard.addKey("K");
-        this.keySquare = this.input.keyboard.addKey("J");
-
-        this.keyUp = this.input.keyboard.addKey("W");
-        this.keyRight = this.input.keyboard.addKey("D");
-        this.keyDown = this.input.keyboard.addKey("S");
-        this.keyLeft = this.input.keyboard.addKey("A");
-
-        this.keyStarL1 = this.input.keyboard.addKey("Q");
-        this.keyStarL2 = this.input.keyboard.addKey("U");
-        this.keyStarR1 = this.input.keyboard.addKey("E");
-        this.keyStarR2 = this.input.keyboard.addKey("O");
-
-        this.divaInput.isKeyUp = function(k) { return !this[k]["cur"]; }
-        this.divaInput.isKeyDown = function(k) { return this[k]["cur"]; }
-        this.divaInput.isKeyTapped = function(k) { return this[k]["cur"] && !this[k]["prev"]; }
-        this.divaInput.isKeyReleased = function(k) { return !this[k]["cur"] && this[k]["prev"]; }
-        this.divaInput.isAnyKeyTapped = function(...ks)
-        {
-            let cond = false;
-            for (const k of ks) {
-                cond |= this.isKeyTapped(k);
-            }
-    
-            return cond;
-        }
-
-        this.divaInput.isAnyKeyReleased = function(...ks)
-        {
-            let cond = false;
-            for (const k of ks) {
-                cond |= this.isKeyReleased(k);
-            }
-    
-            return cond;
-        }
-    }
-
-    updateInput()
-    {
-        this.divaInput["tri"]["prev"] = this.divaInput["tri"]["cur"];
-        this.divaInput["tri"]["cur"]  = this.keyTriangle.isDown;
-
-        this.divaInput["circle"]["prev"] = this.divaInput["circle"]["cur"];
-        this.divaInput["circle"]["cur"]  = this.keyCircle.isDown;
-        
-        this.divaInput["cross"]["prev"] = this.divaInput["cross"]["cur"];
-        this.divaInput["cross"]["cur"]  = this.keyCross.isDown;
-
-        this.divaInput["square"]["prev"] = this.divaInput["square"]["cur"];
-        this.divaInput["square"]["cur"]  = this.keySquare.isDown;
-
-        this.divaInput["up"]["prev"] = this.divaInput["up"]["cur"];
-        this.divaInput["up"]["cur"]  = this.keyUp.isDown;
-
-        this.divaInput["right"]["prev"] = this.divaInput["right"]["cur"];
-        this.divaInput["right"]["cur"]  = this.keyRight.isDown;
-        
-        this.divaInput["down"]["prev"] = this.divaInput["down"]["cur"];
-        this.divaInput["down"]["cur"]  = this.keyDown.isDown;
-
-        this.divaInput["left"]["prev"] = this.divaInput["left"]["cur"];
-        this.divaInput["left"]["cur"]  = this.keyLeft.isDown;
-
-        this.divaInput["starL"]["prev"] = this.divaInput["starL"]["cur"];
-        this.divaInput["starL"]["cur"]  = this.keyStarL1.isDown;
-
-        this.divaInput["starR"]["prev"] = this.divaInput["starR"]["cur"];
-        this.divaInput["starR"]["cur"]  = this.keyStarR2.isDown;
     }
 }
 
@@ -425,6 +464,7 @@ const config = {
     type: Phaser.AUTO,
     width: 768,
     height: 432,
+    canvas: document.getElementById("gameCanvas"),
     scene: GameScene
 };
 
